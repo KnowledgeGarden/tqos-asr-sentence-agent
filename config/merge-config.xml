@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+
+	<!-- NOTE: this is sensitive to:
+		a: the base RDF4J server URL
+		b: the specific repo name -->
+	<parameter name="RDFServerURL" value="http://localhost:8080/rdf4j-server/repositories/ncit?query=" /> 

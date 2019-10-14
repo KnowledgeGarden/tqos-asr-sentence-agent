@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!-- tqos-text-reader properties
+	-->
+
+<properties>
+
+	<!-- for Rethink, this is dbName for the Graph db -->
+	<parameter name="GraphName" value="FirstOS" /> <!-- CHANGE ME -->
+	<!-- a Rethink table -->
+	<parameter name="EdgeTable" value="edges" />
+	<!-- a Rethink table -->
+	<parameter name="VertexTable" value = "vertices" />
+	
+	
+
+</properties>
+
