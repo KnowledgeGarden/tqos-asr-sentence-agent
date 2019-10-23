@@ -5,6 +5,7 @@
 
 <properties>
 	
+	<parameter name="HaveRemoteStatistics" value="T" />
 	<!--
 		ShouldBootstrap: 
 			Yes = test for bootstrap the topic map
@@ -17,7 +18,7 @@
 			that two agents, while booting, will decide to begin the
 			bootstrap process at the same time is not nil.
 	 -->
-	<parameter name="ShouldBootstrap" value="Yes" /> 
+	<parameter name="ShouldBootstrap" value="No" /> 
 	
 	<!-- MergeListener uses a ServerSocket which is blocking.
 		If there are no listeners, it will block listening.

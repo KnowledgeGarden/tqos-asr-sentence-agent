@@ -1,0 +1,200 @@
+
+
+{
+  "Model": "en_ner_jnlpba_md",
+  "doc_id": 0,
+  "para_id": 0,
+  "time": "2019-10-12T10:40:33.952793",
+  "analyzer": {
+    "name": "ner_jnlpba_md",
+    "version": "0.2.3",
+    "lang": "en"
+  },
+  "tok_info": [
+    {
+      "start": 0,
+      "text": "The"
+    },
+    {
+      "start": 4,
+      "text": "pandemic"
+    },
+    {
+      "start": 13,
+      "text": "of"
+    },
+    {
+      "start": 16,
+      "text": "obesity"
+    },
+    {
+      "start": 23,
+      "text": ","
+    },
+    {
+      "start": 25,
+      "text": "type"
+    },
+    {
+      "start": 30,
+      "text": "2"
+    },
+    {
+      "start": 32,
+      "text": "diabetes"
+    },
+    {
+      "start": 41,
+      "text": "mellitus"
+    },
+    {
+      "start": 50,
+      "text": "("
+    },
+    {
+      "start": 51,
+      "text": "T2DM"
+    },
+    {
+      "start": 55,
+      "text": ")"
+    },
+    {
+      "start": 57,
+      "text": "and"
+    },
+    {
+      "start": 61,
+      "text": "nonalcoholic"
+    },
+    {
+      "start": 74,
+      "text": "fatty"
+    },
+    {
+      "start": 80,
+      "text": "liver"
+    },
+    {
+      "start": 86,
+      "text": "disease"
+    },
+    {
+      "start": 94,
+      "text": "("
+    },
+    {
+      "start": 95,
+      "text": "NAFLD"
+    },
+    {
+      "start": 100,
+      "text": ")"
+    },
+    {
+      "start": 102,
+      "text": "has"
+    },
+    {
+      "start": 106,
+      "text": "frequently"
+    },
+    {
+      "start": 117,
+      "text": "been"
+    },
+    {
+      "start": 122,
+      "text": "associated"
+    },
+    {
+      "start": 133,
+      "text": "with"
+    },
+    {
+      "start": 138,
+      "text": "dietary"
+    },
+    {
+      "start": 146,
+      "text": "intake"
+    },
+    {
+      "start": 153,
+      "text": "of"
+    },
+    {
+      "start": 156,
+      "text": "saturated"
+    },
+    {
+      "start": 166,
+      "text": "fats"
+    },
+    {
+      "start": 171,
+      "text": "("
+    },
+    {
+      "start": 172,
+      "text": "1"
+    },
+    {
+      "start": 173,
+      "text": ")"
+    },
+    {
+      "start": 175,
+      "text": "and"
+    },
+    {
+      "start": 179,
+      "text": "specifically"
+    },
+    {
+      "start": 192,
+      "text": "with"
+    },
+    {
+      "start": 197,
+      "text": "dietary"
+    },
+    {
+      "start": 205,
+      "text": "palm"
+    },
+    {
+      "start": 210,
+      "text": "oil"
+    },
+    {
+      "start": 214,
+      "text": "("
+    },
+    {
+      "start": 215,
+      "text": "PO"
+    },
+    {
+      "start": 217,
+      "text": ")"
+    },
+    {
+      "start": 219,
+      "text": "("
+    },
+    {
+      "start": 220,
+      "text": "2"
+    },
+    {
+      "start": 221,
+      "text": ")"
+    },
+    {
+      "start": 222,
+      "text": "."
+    }
+  ],
+  "entities": []
+}

@@ -1,0 +1,618 @@
+
+
+{
+  "Model": "en_core_sci_lg",
+  "doc_id": 0,
+  "para_id": 0,
+  "time": "2019-10-12T10:22:12.505492",
+  "analyzer": {
+    "name": "core_sci_lg",
+    "version": "0.2.3",
+    "lang": "en"
+  },
+  "tok_info": [
+    {
+      "start": 0,
+      "text": "The",
+      "parent": 4,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "the",
+      "sent": 0
+    },
+    {
+      "start": 4,
+      "text": "pandemic",
+      "parent": 122,
+      "tree_s_idx": 0,
+      "tree_e_idx": 100,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubjpass",
+      "sent": 0
+    },
+    {
+      "start": 13,
+      "text": "of",
+      "parent": 4,
+      "tree_s_idx": 13,
+      "tree_e_idx": 16,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "sent": 0
+    },
+    {
+      "start": 16,
+      "text": "obesity",
+      "parent": 13,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "sent": 0
+    },
+    {
+      "start": 23,
+      "text": ",",
+      "parent": 4,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 25,
+      "text": "type",
+      "parent": 41,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 0
+    },
+    {
+      "start": 30,
+      "text": "2",
+      "parent": 41,
+      "pos": "NUM",
+      "tag": "CD",
+      "dep": "nummod",
+      "sent": 0
+    },
+    {
+      "start": 32,
+      "text": "diabetes",
+      "parent": 41,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 0
+    },
+    {
+      "start": 41,
+      "text": "mellitus",
+      "parent": 4,
+      "tree_s_idx": 25,
+      "tree_e_idx": 100,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "sent": 0,
+      "conjuncts": [
+        86
+      ]
+    },
+    {
+      "start": 50,
+      "text": "(",
+      "parent": 51,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 51,
+      "text": "T2DM",
+      "parent": 41,
+      "tree_s_idx": 50,
+      "tree_e_idx": 55,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "lemma": "t2dm",
+      "sent": 0
+    },
+    {
+      "start": 55,
+      "text": ")",
+      "parent": 51,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 57,
+      "text": "and",
+      "parent": 41,
+      "pos": "CCONJ",
+      "tag": "CC",
+      "dep": "cc",
+      "sent": 0
+    },
+    {
+      "start": 61,
+      "text": "nonalcoholic",
+      "parent": 86,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 0
+    },
+    {
+      "start": 74,
+      "text": "fatty",
+      "parent": 86,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 0
+    },
+    {
+      "start": 80,
+      "text": "liver",
+      "parent": 86,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 0
+    },
+    {
+      "start": 86,
+      "text": "disease",
+      "parent": 41,
+      "tree_s_idx": 61,
+      "tree_e_idx": 100,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "conj",
+      "sent": 0,
+      "conjuncts": [
+        41
+      ]
+    },
+    {
+      "start": 94,
+      "text": "(",
+      "parent": 95,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 95,
+      "text": "NAFLD",
+      "parent": 86,
+      "tree_s_idx": 94,
+      "tree_e_idx": 100,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "lemma": "nafld",
+      "sent": 0
+    },
+    {
+      "start": 100,
+      "text": ")",
+      "parent": 95,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 102,
+      "text": "has",
+      "parent": 122,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "aux",
+      "lemma": "have",
+      "sent": 0
+    },
+    {
+      "start": 106,
+      "text": "frequently",
+      "parent": 122,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 0
+    },
+    {
+      "start": 117,
+      "text": "been",
+      "parent": 122,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "auxpass",
+      "lemma": "be",
+      "sent": 0
+    },
+    {
+      "start": 122,
+      "text": "associated",
+      "tree_s_idx": 0,
+      "tree_e_idx": 222,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "associate",
+      "sent": 0,
+      "conjuncts": [
+        210
+      ]
+    },
+    {
+      "start": 133,
+      "text": "with",
+      "parent": 146,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 138,
+      "text": "dietary",
+      "parent": 146,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 0
+    },
+    {
+      "start": 146,
+      "text": "intake",
+      "parent": 122,
+      "tree_s_idx": 133,
+      "tree_e_idx": 166,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 0
+    },
+    {
+      "start": 153,
+      "text": "of",
+      "parent": 166,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 156,
+      "text": "saturated",
+      "parent": 166,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 0
+    },
+    {
+      "start": 166,
+      "text": "fats",
+      "parent": 146,
+      "tree_s_idx": 153,
+      "tree_e_idx": 166,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "fat",
+      "sent": 0
+    },
+    {
+      "start": 171,
+      "text": "(",
+      "parent": 172,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 172,
+      "text": "1",
+      "parent": 122,
+      "tree_s_idx": 171,
+      "tree_e_idx": 173,
+      "pos": "NUM",
+      "tag": "CD",
+      "dep": "dep",
+      "sent": 0
+    },
+    {
+      "start": 173,
+      "text": ")",
+      "parent": 172,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 175,
+      "text": "and",
+      "parent": 122,
+      "pos": "CCONJ",
+      "tag": "CC",
+      "dep": "cc",
+      "sent": 0
+    },
+    {
+      "start": 179,
+      "text": "specifically",
+      "parent": 210,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 0
+    },
+    {
+      "start": 192,
+      "text": "with",
+      "parent": 210,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 197,
+      "text": "dietary",
+      "parent": 210,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 0
+    },
+    {
+      "start": 205,
+      "text": "palm",
+      "parent": 210,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 0
+    },
+    {
+      "start": 210,
+      "text": "oil",
+      "parent": 122,
+      "tree_s_idx": 179,
+      "tree_e_idx": 221,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "conj",
+      "sent": 0,
+      "conjuncts": [
+        122
+      ]
+    },
+    {
+      "start": 214,
+      "text": "(",
+      "parent": 215,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 215,
+      "text": "PO",
+      "parent": 210,
+      "tree_s_idx": 214,
+      "tree_e_idx": 217,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "lemma": "po",
+      "sent": 0
+    },
+    {
+      "start": 217,
+      "text": ")",
+      "parent": 215,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 219,
+      "text": "(",
+      "parent": 220,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 220,
+      "text": "2",
+      "parent": 210,
+      "tree_s_idx": 219,
+      "tree_e_idx": 221,
+      "pos": "NUM",
+      "tag": "CD",
+      "dep": "appos",
+      "sent": 0
+    },
+    {
+      "start": 221,
+      "text": ")",
+      "parent": 220,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 222,
+      "text": ".",
+      "parent": 122,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 0
+    }
+  ],
+  "entities": [
+    {
+      "start": 4,
+      "end": 12,
+      "text": "pandemic",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 16,
+      "end": 23,
+      "text": "obesity",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 25,
+      "end": 49,
+      "text": "type 2 diabetes mellitus",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 51,
+      "end": 55,
+      "text": "T2DM",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 61,
+      "end": 93,
+      "text": "nonalcoholic fatty liver disease",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 95,
+      "end": 100,
+      "text": "NAFLD",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 122,
+      "end": 137,
+      "text": "associated with",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 138,
+      "end": 152,
+      "text": "dietary intake",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 156,
+      "end": 170,
+      "text": "saturated fats",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 197,
+      "end": 213,
+      "text": "dietary palm oil",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 215,
+      "end": 217,
+      "text": "PO",
+      "label": "ENTITY",
+      "sent": 0
+    }
+  ],
+  "sentences": [
+    {
+      "start": 0,
+      "end": 223,
+      "text": "The pandemic of obesity, type 2 diabetes mellitus (T2DM) and nonalcoholic fatty liver disease (NAFLD) has frequently been associated with dietary intake of saturated fats (1) and specifically with dietary palm oil (PO) (2)."
+    }
+  ],
+  "noun_chunks": [
+    {
+      "start": 0,
+      "end": 12,
+      "text": "The pandemic",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 16,
+      "end": 23,
+      "text": "obesity",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 25,
+      "end": 49,
+      "text": "type 2 diabetes mellitus",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 50,
+      "end": 55,
+      "text": "(T2DM",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 61,
+      "end": 93,
+      "text": "nonalcoholic fatty liver disease",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 94,
+      "end": 100,
+      "text": "(NAFLD",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 179,
+      "end": 213,
+      "text": "specifically with dietary palm oil",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 214,
+      "end": 217,
+      "text": "(PO",
+      "label": "NP",
+      "sent": 0
+    }
+  ]
+}

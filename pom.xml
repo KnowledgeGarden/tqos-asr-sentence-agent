@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.topicquests</groupId>
     <artifactId>tqos-asr-sentence-agent</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <name>tqos-asr-sentence-agent</name>
     <developers>
         <developer>
@@ -203,7 +203,7 @@
     	<dependency>
     		<groupId>org.topicquests</groupId>
     		<artifactId>tqos-asr2-core</artifactId>
-    		<version>0.1.0-SNAPSHOT</version>
+    		<version>0.1.1-SNAPSHOT</version>
     	</dependency>
     </dependencies>
     <url>https://github.com/KnowledgeGarden/tqos-asr2-sentence-agent</url>
