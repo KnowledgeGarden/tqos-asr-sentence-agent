@@ -1,6 +1,11 @@
 <?xml version="1.0" ?>
 
 <properties>
+	<!-- This file serves several masters including the wordgram graph -->
+	<parameter name="GraphDatabaseName" value = "wordgrams" />
+	<parameter name="GraphDatabaseSchema" value = "tq_graph" />
+
+	
 	<!-- DatabaseName must coordinate with the file asr-schema.sql -->
 	<parameter name="DatabaseName" value = "newdoctest" />
 	<parameter name="DatabaseSchema" value = "tqos_asr" />

@@ -5,7 +5,7 @@
 <properties>
 
 	<!-- for Rethink, this is dbName for the Graph db -->
-	<parameter name="GraphName" value="FirstOS" /> <!-- CHANGE ME -->
+	<parameter name="GraphName" value="wordgrams" /> <!-- CHANGE ME -->
 	<!-- a Rethink table -->
 	<parameter name="EdgeTable" value="edges" />
 	<!-- a Rethink table -->

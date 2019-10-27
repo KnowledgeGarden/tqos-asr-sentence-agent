@@ -4,6 +4,7 @@
 package org.topicquests.os.asr.reader.sentences;
 
 import org.topicquests.os.asr.AsrCoreEnvironment;
+import org.topicquests.os.asr.dbpedia.SpotlightClient;
 import org.topicquests.os.asr.reader.sentences.api.ISentenceAgent;
 /**
  * @author jackpark
@@ -28,7 +29,7 @@ public class SentencesEnvironment extends AsrCoreEnvironment {
 		});
 	}
 	
-	
+
 	public ISentenceAgent getSentenceAgent() {
 		return agent;
 	}

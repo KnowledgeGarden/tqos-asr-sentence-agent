@@ -4,6 +4,12 @@
 	-->
 
 <properties>
+
+	<!-- this server commmunicates with the Statistics Server -->
+	<parameter name="StatServerURl" value="localhost" /> <!--  coordinate with StatServer -->
+	<parameter name="StatServerPort" value="6900" /> <!-- coordinate with StatServer -->
+	<parameter name="StatServerClientId" value = "changeme" /> <!-- coordinate with StatServer -->
+
 	
 	<parameter name="HaveRemoteStatistics" value="T" />
 	<!--
@@ -18,7 +24,7 @@
 			that two agents, while booting, will decide to begin the
 			bootstrap process at the same time is not nil.
 	 -->
-	<parameter name="ShouldBootstrap" value="No" /> 
+	<parameter name="ShouldBootstrap" value="Yes" /> 
 	
 	<!-- MergeListener uses a ServerSocket which is blocking.
 		If there are no listeners, it will block listening.

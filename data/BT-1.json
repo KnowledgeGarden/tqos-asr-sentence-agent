@@ -1,0 +1,3681 @@
+{
+  "Model": "en_core_sci_lg",
+  "doc_id": 0,
+  "para_id": 0,
+  "time": "2019-10-23T17:17:50.511643",
+  "analyzer": {
+    "name": "core_sci_lg",
+    "version": "0.2.3",
+    "lang": "en"
+  },
+  "tok_info": [
+    {
+      "start": 0,
+      "text": "Two",
+      "parent": 10,
+      "pos": "NUM",
+      "tag": "CD",
+      "dep": "nummod",
+      "lemma": "two",
+      "sent": 0
+    },
+    {
+      "start": 4,
+      "text": "basic",
+      "parent": 10,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 0
+    },
+    {
+      "start": 10,
+      "text": "discoveries",
+      "parent": 22,
+      "tree_s_idx": 0,
+      "tree_e_idx": 10,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nsubj",
+      "lemma": "discovery",
+      "sent": 0
+    },
+    {
+      "start": 22,
+      "text": "spurred",
+      "tree_s_idx": 0,
+      "tree_e_idx": 123,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "ROOT",
+      "lemma": "spur",
+      "sent": 0
+    },
+    {
+      "start": 30,
+      "text": "research",
+      "parent": 22,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 0
+    },
+    {
+      "start": 39,
+      "text": "into",
+      "parent": 22,
+      "tree_s_idx": 39,
+      "tree_e_idx": 44,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "sent": 0
+    },
+    {
+      "start": 44,
+      "text": "inflammation",
+      "parent": 39,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "sent": 0
+    },
+    {
+      "start": 57,
+      "text": "as",
+      "parent": 70,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 60,
+      "text": "a",
+      "parent": 70,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 0
+    },
+    {
+      "start": 62,
+      "text": "driving",
+      "parent": 70,
+      "pos": "VERB",
+      "tag": "VBG",
+      "dep": "compound",
+      "lemma": "drive",
+      "sent": 0
+    },
+    {
+      "start": 70,
+      "text": "force",
+      "parent": 22,
+      "tree_s_idx": 57,
+      "tree_e_idx": 122,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 0
+    },
+    {
+      "start": 76,
+      "text": "in",
+      "parent": 83,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 79,
+      "text": "the",
+      "parent": 83,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 0
+    },
+    {
+      "start": 83,
+      "text": "pathogenesis",
+      "parent": 70,
+      "tree_s_idx": 76,
+      "tree_e_idx": 122,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 0
+    },
+    {
+      "start": 96,
+      "text": "of",
+      "parent": 111,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 99,
+      "text": "Alzheimer",
+      "parent": 111,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod:poss",
+      "lemma": "alzheimer",
+      "sent": 0
+    },
+    {
+      "start": 108,
+      "text": "'s",
+      "parent": 111,
+      "pos": "PART",
+      "tag": "POS",
+      "dep": "case",
+      "sent": 0
+    },
+    {
+      "start": 111,
+      "text": "disease",
+      "parent": 83,
+      "tree_s_idx": 96,
+      "tree_e_idx": 122,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 0
+    },
+    {
+      "start": 119,
+      "text": "(",
+      "parent": 120,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 120,
+      "text": "AD",
+      "parent": 111,
+      "tree_s_idx": 119,
+      "tree_e_idx": 122,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "lemma": "ad",
+      "sent": 0
+    },
+    {
+      "start": 122,
+      "text": ")",
+      "parent": 120,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 123,
+      "text": ".",
+      "parent": 22,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 0
+    },
+    {
+      "start": 125,
+      "text": "The",
+      "parent": 129,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "the",
+      "sent": 125
+    },
+    {
+      "start": 129,
+      "text": "first",
+      "parent": 143,
+      "tree_s_idx": 125,
+      "tree_e_idx": 129,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "nsubj",
+      "sent": 125
+    },
+    {
+      "start": 135,
+      "text": "was",
+      "parent": 143,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "cop",
+      "lemma": "be",
+      "sent": 125
+    },
+    {
+      "start": 139,
+      "text": "the",
+      "parent": 143,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 125
+    },
+    {
+      "start": 143,
+      "text": "identification",
+      "tree_s_idx": 125,
+      "tree_e_idx": 212,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "ROOT",
+      "sent": 125
+    },
+    {
+      "start": 158,
+      "text": "of",
+      "parent": 171,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 125
+    },
+    {
+      "start": 161,
+      "text": "activated",
+      "parent": 171,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "amod",
+      "lemma": "activate",
+      "sent": 125
+    },
+    {
+      "start": 171,
+      "text": "microglia",
+      "parent": 143,
+      "tree_s_idx": 158,
+      "tree_e_idx": 171,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "sent": 125
+    },
+    {
+      "start": 181,
+      "text": "in",
+      "parent": 184,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 125
+    },
+    {
+      "start": 184,
+      "text": "association",
+      "parent": 143,
+      "tree_s_idx": 181,
+      "tree_e_idx": 205,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 125
+    },
+    {
+      "start": 196,
+      "text": "with",
+      "parent": 205,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 125
+    },
+    {
+      "start": 201,
+      "text": "the",
+      "parent": 205,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 125
+    },
+    {
+      "start": 205,
+      "text": "lesions",
+      "parent": 184,
+      "tree_s_idx": 196,
+      "tree_e_idx": 205,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "lesion",
+      "sent": 125
+    },
+    {
+      "start": 212,
+      "text": ".",
+      "parent": 143,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 125
+    },
+    {
+      "start": 214,
+      "text": "The",
+      "parent": 218,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "the",
+      "sent": 214
+    },
+    {
+      "start": 218,
+      "text": "second",
+      "parent": 225,
+      "tree_s_idx": 214,
+      "tree_e_idx": 218,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 214
+    },
+    {
+      "start": 225,
+      "text": "was",
+      "parent": 233,
+      "tree_s_idx": 214,
+      "tree_e_idx": 225,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "cop",
+      "lemma": "be",
+      "sent": 214
+    },
+    {
+      "start": 229,
+      "text": "the",
+      "parent": 233,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 214
+    },
+    {
+      "start": 233,
+      "text": "discovery",
+      "tree_s_idx": 214,
+      "tree_e_idx": 358,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "ROOT",
+      "sent": 214
+    },
+    {
+      "start": 243,
+      "text": "that",
+      "parent": 335,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 214
+    },
+    {
+      "start": 248,
+      "text": "rheumatoid",
+      "parent": 259,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 214
+    },
+    {
+      "start": 259,
+      "text": "arthritics",
+      "parent": 335,
+      "tree_s_idx": 248,
+      "tree_e_idx": 317,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nsubjpass",
+      "lemma": "arthritic",
+      "sent": 214
+    },
+    {
+      "start": 269,
+      "text": ",",
+      "parent": 259,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 214
+    },
+    {
+      "start": 271,
+      "text": "who",
+      "parent": 285,
+      "pos": "PRON",
+      "tag": "WP",
+      "dep": "nsubj",
+      "sent": 214
+    },
+    {
+      "start": 275,
+      "text": "regularly",
+      "parent": 285,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 214
+    },
+    {
+      "start": 285,
+      "text": "consume",
+      "parent": 259,
+      "tree_s_idx": 271,
+      "tree_e_idx": 311,
+      "pos": "VERB",
+      "tag": "VBP",
+      "dep": "acl:relcl",
+      "sent": 214
+    },
+    {
+      "start": 293,
+      "text": "anti-inflammatory",
+      "parent": 311,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 214
+    },
+    {
+      "start": 311,
+      "text": "agents",
+      "parent": 285,
+      "tree_s_idx": 293,
+      "tree_e_idx": 311,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "dobj",
+      "lemma": "agent",
+      "sent": 214
+    },
+    {
+      "start": 317,
+      "text": ",",
+      "parent": 259,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 214
+    },
+    {
+      "start": 319,
+      "text": "were",
+      "parent": 335,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "auxpass",
+      "lemma": "be",
+      "sent": 214
+    },
+    {
+      "start": 324,
+      "text": "relatively",
+      "parent": 335,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 214
+    },
+    {
+      "start": 335,
+      "text": "spared",
+      "parent": 233,
+      "tree_s_idx": 243,
+      "tree_e_idx": 351,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ccomp",
+      "lemma": "spare",
+      "sent": 214
+    },
+    {
+      "start": 342,
+      "text": "from",
+      "parent": 351,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 214
+    },
+    {
+      "start": 347,
+      "text": "the",
+      "parent": 351,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 214
+    },
+    {
+      "start": 351,
+      "text": "disease",
+      "parent": 335,
+      "tree_s_idx": 342,
+      "tree_e_idx": 351,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 214
+    },
+    {
+      "start": 358,
+      "text": ".",
+      "parent": 233,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 214
+    },
+    {
+      "start": 360,
+      "text": "These",
+      "parent": 366,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "these",
+      "sent": 360
+    },
+    {
+      "start": 366,
+      "text": "findings",
+      "parent": 375,
+      "tree_s_idx": 360,
+      "tree_e_idx": 366,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nsubj",
+      "lemma": "finding",
+      "sent": 360
+    },
+    {
+      "start": 375,
+      "text": "led",
+      "tree_s_idx": 360,
+      "tree_e_idx": 463,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "ROOT",
+      "lemma": "lead",
+      "sent": 360
+    },
+    {
+      "start": 379,
+      "text": "to",
+      "parent": 385,
+      "pos": "PART",
+      "tag": "TO",
+      "dep": "case",
+      "sent": 360
+    },
+    {
+      "start": 382,
+      "text": "an",
+      "parent": 385,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 360
+    },
+    {
+      "start": 385,
+      "text": "exploration",
+      "parent": 375,
+      "tree_s_idx": 379,
+      "tree_e_idx": 451,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 360
+    },
+    {
+      "start": 397,
+      "text": "of",
+      "parent": 417,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 360
+    },
+    {
+      "start": 400,
+      "text": "the",
+      "parent": 417,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 360
+    },
+    {
+      "start": 404,
+      "text": "inflammatory",
+      "parent": 417,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 360
+    },
+    {
+      "start": 417,
+      "text": "pathways",
+      "parent": 385,
+      "tree_s_idx": 397,
+      "tree_e_idx": 451,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "pathway",
+      "sent": 360
+    },
+    {
+      "start": 426,
+      "text": "that",
+      "parent": 436,
+      "pos": "PRON",
+      "tag": "WDT",
+      "dep": "nsubjpass",
+      "sent": 360
+    },
+    {
+      "start": 431,
+      "text": "were",
+      "parent": 436,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "auxpass",
+      "lemma": "be",
+      "sent": 360
+    },
+    {
+      "start": 436,
+      "text": "involved",
+      "parent": 417,
+      "tree_s_idx": 426,
+      "tree_e_idx": 451,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "acl:relcl",
+      "lemma": "involve",
+      "sent": 360
+    },
+    {
+      "start": 445,
+      "text": "in",
+      "parent": 451,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 360
+    },
+    {
+      "start": 448,
+      "text": "AD",
+      "parent": 451,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "lemma": "ad",
+      "sent": 360
+    },
+    {
+      "start": 451,
+      "text": "pathogenesis",
+      "parent": 436,
+      "tree_s_idx": 445,
+      "tree_e_idx": 451,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 360
+    },
+    {
+      "start": 463,
+      "text": ".",
+      "parent": 375,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 360
+    },
+    {
+      "start": 465,
+      "text": "A",
+      "parent": 475,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "a",
+      "sent": 465
+    },
+    {
+      "start": 467,
+      "text": "pivotal",
+      "parent": 475,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 465
+    },
+    {
+      "start": 475,
+      "text": "advance",
+      "parent": 483,
+      "tree_s_idx": 465,
+      "tree_e_idx": 475,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 465
+    },
+    {
+      "start": 483,
+      "text": "was",
+      "parent": 491,
+      "tree_s_idx": 465,
+      "tree_e_idx": 483,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "cop",
+      "lemma": "be",
+      "sent": 465
+    },
+    {
+      "start": 487,
+      "text": "the",
+      "parent": 491,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 465
+    },
+    {
+      "start": 491,
+      "text": "discovery",
+      "tree_s_idx": 465,
+      "tree_e_idx": 560,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "ROOT",
+      "sent": 465
+    },
+    {
+      "start": 501,
+      "text": "that",
+      "parent": 529,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 465
+    },
+    {
+      "start": 506,
+      "text": "amyloid-\u03b2",
+      "parent": 516,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "compound",
+      "sent": 465
+    },
+    {
+      "start": 516,
+      "text": "protein",
+      "parent": 529,
+      "tree_s_idx": 506,
+      "tree_e_idx": 527,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 465
+    },
+    {
+      "start": 524,
+      "text": "(",
+      "parent": 525,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 465
+    },
+    {
+      "start": 525,
+      "text": "A\u03b2",
+      "parent": 516,
+      "tree_s_idx": 524,
+      "tree_e_idx": 527,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "lemma": "a\u03b2",
+      "sent": 465
+    },
+    {
+      "start": 527,
+      "text": ")",
+      "parent": 525,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 465
+    },
+    {
+      "start": 529,
+      "text": "activated",
+      "parent": 491,
+      "tree_s_idx": 501,
+      "tree_e_idx": 554,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "ccomp",
+      "lemma": "activate",
+      "sent": 465
+    },
+    {
+      "start": 539,
+      "text": "the",
+      "parent": 554,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 465
+    },
+    {
+      "start": 543,
+      "text": "complement",
+      "parent": 554,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 465
+    },
+    {
+      "start": 554,
+      "text": "system",
+      "parent": 529,
+      "tree_s_idx": 539,
+      "tree_e_idx": 554,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 465
+    },
+    {
+      "start": 560,
+      "text": ".",
+      "parent": 491,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 465
+    },
+    {
+      "start": 562,
+      "text": "This",
+      "parent": 567,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "nsubj",
+      "lemma": "this",
+      "sent": 562
+    },
+    {
+      "start": 567,
+      "text": "focused",
+      "parent": 575,
+      "tree_s_idx": 562,
+      "tree_e_idx": 567,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "amod",
+      "lemma": "focus",
+      "sent": 562
+    },
+    {
+      "start": 575,
+      "text": "attention",
+      "tree_s_idx": 562,
+      "tree_e_idx": 644,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "ROOT",
+      "sent": 562
+    },
+    {
+      "start": 585,
+      "text": "on",
+      "parent": 588,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 562
+    },
+    {
+      "start": 588,
+      "text": "anti-inflammatories",
+      "parent": 575,
+      "tree_s_idx": 585,
+      "tree_e_idx": 588,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "anti-inflammatorie",
+      "sent": 562
+    },
+    {
+      "start": 608,
+      "text": "as",
+      "parent": 611,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 562
+    },
+    {
+      "start": 611,
+      "text": "blockers",
+      "parent": 575,
+      "tree_s_idx": 608,
+      "tree_e_idx": 634,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "blocker",
+      "sent": 562
+    },
+    {
+      "start": 620,
+      "text": "of",
+      "parent": 634,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 562
+    },
+    {
+      "start": 623,
+      "text": "complement",
+      "parent": 634,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 562
+    },
+    {
+      "start": 634,
+      "text": "activation",
+      "parent": 611,
+      "tree_s_idx": 620,
+      "tree_e_idx": 634,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 562
+    },
+    {
+      "start": 644,
+      "text": ".",
+      "parent": 575,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 562
+    },
+    {
+      "start": 646,
+      "text": "More",
+      "parent": 656,
+      "tree_s_idx": 646,
+      "tree_e_idx": 651,
+      "pos": "ADJ",
+      "tag": "JJR",
+      "dep": "advmod",
+      "sent": 646
+    },
+    {
+      "start": 651,
+      "text": "than",
+      "parent": 646,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mwe",
+      "sent": 646
+    },
+    {
+      "start": 656,
+      "text": "15",
+      "parent": 675,
+      "tree_s_idx": 646,
+      "tree_e_idx": 656,
+      "pos": "NUM",
+      "tag": "CD",
+      "dep": "nummod",
+      "sent": 646
+    },
+    {
+      "start": 659,
+      "text": "epidemiological",
+      "parent": 675,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 646
+    },
+    {
+      "start": 675,
+      "text": "studies",
+      "parent": 694,
+      "tree_s_idx": 646,
+      "tree_e_idx": 675,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nsubj",
+      "lemma": "study",
+      "sent": 646
+    },
+    {
+      "start": 683,
+      "text": "have",
+      "parent": 694,
+      "pos": "VERB",
+      "tag": "VBP",
+      "dep": "aux",
+      "sent": 646
+    },
+    {
+      "start": 688,
+      "text": "since",
+      "parent": 694,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 646
+    },
+    {
+      "start": 694,
+      "text": "showed",
+      "tree_s_idx": 646,
+      "tree_e_idx": 773,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "show",
+      "sent": 646
+    },
+    {
+      "start": 701,
+      "text": "a",
+      "parent": 711,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 646
+    },
+    {
+      "start": 703,
+      "text": "sparing",
+      "parent": 711,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 646
+    },
+    {
+      "start": 711,
+      "text": "effect",
+      "parent": 694,
+      "tree_s_idx": 701,
+      "tree_e_idx": 771,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 646
+    },
+    {
+      "start": 718,
+      "text": "of",
+      "parent": 753,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 646
+    },
+    {
+      "start": 721,
+      "text": "non-steroidal",
+      "parent": 753,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 646
+    },
+    {
+      "start": 735,
+      "text": "anti-inflammatory",
+      "parent": 753,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 646
+    },
+    {
+      "start": 753,
+      "text": "drugs",
+      "parent": 711,
+      "tree_s_idx": 718,
+      "tree_e_idx": 766,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "drug",
+      "sent": 646
+    },
+    {
+      "start": 759,
+      "text": "(",
+      "parent": 760,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 646
+    },
+    {
+      "start": 760,
+      "text": "NSAIDs",
+      "parent": 753,
+      "tree_s_idx": 759,
+      "tree_e_idx": 766,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "appos",
+      "lemma": "nsaid",
+      "sent": 646
+    },
+    {
+      "start": 766,
+      "text": ")",
+      "parent": 760,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 646
+    },
+    {
+      "start": 768,
+      "text": "in",
+      "parent": 771,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 646
+    },
+    {
+      "start": 771,
+      "text": "AD",
+      "parent": 711,
+      "tree_s_idx": 768,
+      "tree_e_idx": 771,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "lemma": "ad",
+      "sent": 646
+    },
+    {
+      "start": 773,
+      "text": ".",
+      "parent": 694,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 646
+    },
+    {
+      "start": 775,
+      "text": "A",
+      "parent": 788,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "a",
+      "sent": 775
+    },
+    {
+      "start": 777,
+      "text": "consistent",
+      "parent": 788,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 775
+    },
+    {
+      "start": 788,
+      "text": "finding",
+      "parent": 800,
+      "tree_s_idx": 775,
+      "tree_e_idx": 788,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 775
+    },
+    {
+      "start": 796,
+      "text": "has",
+      "parent": 800,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "aux",
+      "lemma": "have",
+      "sent": 775
+    },
+    {
+      "start": 800,
+      "text": "been",
+      "tree_s_idx": 775,
+      "tree_e_idx": 901,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "be",
+      "sent": 775
+    },
+    {
+      "start": 805,
+      "text": "that",
+      "parent": 837,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 775
+    },
+    {
+      "start": 810,
+      "text": "the",
+      "parent": 814,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 775
+    },
+    {
+      "start": 814,
+      "text": "longer",
+      "parent": 837,
+      "tree_s_idx": 810,
+      "tree_e_idx": 814,
+      "pos": "ADJ",
+      "tag": "JJR",
+      "dep": "nsubjpass",
+      "lemma": "long",
+      "sent": 775
+    },
+    {
+      "start": 821,
+      "text": "the",
+      "parent": 825,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 775
+    },
+    {
+      "start": 825,
+      "text": "NSAIDs",
+      "parent": 837,
+      "tree_s_idx": 821,
+      "tree_e_idx": 825,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nsubjpass",
+      "lemma": "nsaid",
+      "sent": 775
+    },
+    {
+      "start": 832,
+      "text": "were",
+      "parent": 837,
+      "pos": "VERB",
+      "tag": "VBD",
+      "dep": "auxpass",
+      "lemma": "be",
+      "sent": 775
+    },
+    {
+      "start": 837,
+      "text": "used",
+      "parent": 800,
+      "tree_s_idx": 805,
+      "tree_e_idx": 869,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ccomp",
+      "lemma": "use",
+      "sent": 775
+    },
+    {
+      "start": 842,
+      "text": "prior",
+      "parent": 860,
+      "tree_s_idx": 842,
+      "tree_e_idx": 848,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "case",
+      "sent": 775
+    },
+    {
+      "start": 848,
+      "text": "to",
+      "parent": 842,
+      "pos": "PART",
+      "tag": "TO",
+      "dep": "mwe",
+      "sent": 775
+    },
+    {
+      "start": 851,
+      "text": "clinical",
+      "parent": 860,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 775
+    },
+    {
+      "start": 860,
+      "text": "diagnosis",
+      "parent": 837,
+      "tree_s_idx": 842,
+      "tree_e_idx": 860,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 775
+    },
+    {
+      "start": 869,
+      "text": ",",
+      "parent": 837,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 775
+    },
+    {
+      "start": 871,
+      "text": "the",
+      "parent": 895,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 775
+    },
+    {
+      "start": 875,
+      "text": "greater",
+      "parent": 895,
+      "pos": "ADJ",
+      "tag": "JJR",
+      "dep": "amod",
+      "lemma": "great",
+      "sent": 775
+    },
+    {
+      "start": 883,
+      "text": "the",
+      "parent": 895,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 775
+    },
+    {
+      "start": 887,
+      "text": "sparing",
+      "parent": 895,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 775
+    },
+    {
+      "start": 895,
+      "text": "effect",
+      "parent": 800,
+      "tree_s_idx": 871,
+      "tree_e_idx": 895,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "attr",
+      "sent": 775
+    },
+    {
+      "start": 901,
+      "text": ".",
+      "parent": 800,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 775
+    },
+    {
+      "start": 903,
+      "text": "The",
+      "parent": 907,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "lemma": "the",
+      "sent": 903
+    },
+    {
+      "start": 907,
+      "text": "reason",
+      "parent": 924,
+      "tree_s_idx": 903,
+      "tree_e_idx": 907,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 903
+    },
+    {
+      "start": 914,
+      "text": "has",
+      "parent": 924,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "aux",
+      "lemma": "have",
+      "sent": 903
+    },
+    {
+      "start": 918,
+      "text": "since",
+      "parent": 924,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "advmod",
+      "sent": 903
+    },
+    {
+      "start": 924,
+      "text": "emerged",
+      "tree_s_idx": 903,
+      "tree_e_idx": 1040,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "emerge",
+      "sent": 903
+    },
+    {
+      "start": 932,
+      "text": "from",
+      "parent": 937,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 903
+    },
+    {
+      "start": 937,
+      "text": "studies",
+      "parent": 924,
+      "tree_s_idx": 932,
+      "tree_e_idx": 1035,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "study",
+      "sent": 903
+    },
+    {
+      "start": 945,
+      "text": "of",
+      "parent": 948,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 903
+    },
+    {
+      "start": 948,
+      "text": "biomarkers",
+      "parent": 937,
+      "tree_s_idx": 945,
+      "tree_e_idx": 1035,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "biomarker",
+      "sent": 903
+    },
+    {
+      "start": 959,
+      "text": "such",
+      "parent": 967,
+      "tree_s_idx": 959,
+      "tree_e_idx": 964,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "case",
+      "sent": 903
+    },
+    {
+      "start": 964,
+      "text": "as",
+      "parent": 959,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mwe",
+      "sent": 903
+    },
+    {
+      "start": 967,
+      "text": "amyloid-\u03b2",
+      "parent": 982,
+      "tree_s_idx": 959,
+      "tree_e_idx": 980,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "compound",
+      "sent": 903
+    },
+    {
+      "start": 977,
+      "text": "(",
+      "parent": 978,
+      "pos": "PUNCT",
+      "tag": "-LRB-",
+      "dep": "punct",
+      "sent": 903
+    },
+    {
+      "start": 978,
+      "text": "A\u03b2",
+      "parent": 967,
+      "tree_s_idx": 977,
+      "tree_e_idx": 980,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "appos",
+      "lemma": "a\u03b2",
+      "sent": 903
+    },
+    {
+      "start": 980,
+      "text": ")",
+      "parent": 978,
+      "pos": "PUNCT",
+      "tag": "-RRB-",
+      "dep": "punct",
+      "sent": 903
+    },
+    {
+      "start": 982,
+      "text": "levels",
+      "parent": 948,
+      "tree_s_idx": 959,
+      "tree_e_idx": 1035,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "level",
+      "sent": 903
+    },
+    {
+      "start": 989,
+      "text": "in",
+      "parent": 1010,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 903
+    },
+    {
+      "start": 992,
+      "text": "the",
+      "parent": 1010,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 903
+    },
+    {
+      "start": 996,
+      "text": "cerebrospinal",
+      "parent": 1010,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 903
+    },
+    {
+      "start": 1010,
+      "text": "fluid",
+      "parent": 982,
+      "tree_s_idx": 989,
+      "tree_e_idx": 1035,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 903,
+      "conjuncts": [
+        1023
+      ]
+    },
+    {
+      "start": 1016,
+      "text": "and",
+      "parent": 1010,
+      "pos": "CCONJ",
+      "tag": "CC",
+      "dep": "cc",
+      "sent": 903
+    },
+    {
+      "start": 1020,
+      "text": "A\u03b2",
+      "parent": 1023,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "lemma": "a\u03b2",
+      "sent": 903
+    },
+    {
+      "start": 1023,
+      "text": "deposits",
+      "parent": 1010,
+      "tree_s_idx": 1020,
+      "tree_e_idx": 1035,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "conj",
+      "lemma": "deposit",
+      "sent": 903,
+      "conjuncts": [
+        1010
+      ]
+    },
+    {
+      "start": 1032,
+      "text": "in",
+      "parent": 1035,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 903
+    },
+    {
+      "start": 1035,
+      "text": "brain",
+      "parent": 1023,
+      "tree_s_idx": 1032,
+      "tree_e_idx": 1035,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 903
+    },
+    {
+      "start": 1040,
+      "text": ".",
+      "parent": 924,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 903
+    },
+    {
+      "start": 1042,
+      "text": "They",
+      "parent": 1052,
+      "pos": "PRON",
+      "tag": "PRP",
+      "dep": "nsubj",
+      "lemma": "-PRON-",
+      "sent": 1042
+    },
+    {
+      "start": 1047,
+      "text": "have",
+      "parent": 1052,
+      "pos": "VERB",
+      "tag": "VBP",
+      "dep": "aux",
+      "sent": 1042
+    },
+    {
+      "start": 1052,
+      "text": "established",
+      "tree_s_idx": 1042,
+      "tree_e_idx": 1164,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "establish",
+      "sent": 1042,
+      "conjuncts": [
+        1138
+      ]
+    },
+    {
+      "start": 1064,
+      "text": "that",
+      "parent": 1085,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 1042
+    },
+    {
+      "start": 1069,
+      "text": "the",
+      "parent": 1073,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 1042
+    },
+    {
+      "start": 1073,
+      "text": "onset",
+      "parent": 1085,
+      "tree_s_idx": 1069,
+      "tree_e_idx": 1082,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 1042
+    },
+    {
+      "start": 1079,
+      "text": "of",
+      "parent": 1082,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1042
+    },
+    {
+      "start": 1082,
+      "text": "AD",
+      "parent": 1073,
+      "tree_s_idx": 1079,
+      "tree_e_idx": 1082,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "lemma": "ad",
+      "sent": 1042
+    },
+    {
+      "start": 1085,
+      "text": "commences",
+      "parent": 1052,
+      "tree_s_idx": 1064,
+      "tree_e_idx": 1106,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "ccomp",
+      "lemma": "commence",
+      "sent": 1042
+    },
+    {
+      "start": 1095,
+      "text": "at",
+      "parent": 1098,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "advmod",
+      "sent": 1042
+    },
+    {
+      "start": 1098,
+      "text": "least",
+      "parent": 1106,
+      "tree_s_idx": 1095,
+      "tree_e_idx": 1098,
+      "pos": "ADJ",
+      "tag": "JJS",
+      "dep": "advmod",
+      "sent": 1042
+    },
+    {
+      "start": 1104,
+      "text": "a",
+      "parent": 1106,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 1042
+    },
+    {
+      "start": 1106,
+      "text": "decade",
+      "parent": 1085,
+      "tree_s_idx": 1095,
+      "tree_e_idx": 1106,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 1042
+    },
+    {
+      "start": 1113,
+      "text": "before",
+      "parent": 1130,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1042
+    },
+    {
+      "start": 1120,
+      "text": "cognitive",
+      "parent": 1130,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1042
+    },
+    {
+      "start": 1130,
+      "text": "decline",
+      "parent": 1138,
+      "tree_s_idx": 1113,
+      "tree_e_idx": 1130,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 1042
+    },
+    {
+      "start": 1138,
+      "text": "permits",
+      "parent": 1052,
+      "tree_s_idx": 1113,
+      "tree_e_idx": 1155,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "conj",
+      "lemma": "permit",
+      "sent": 1042,
+      "conjuncts": [
+        1052
+      ]
+    },
+    {
+      "start": 1146,
+      "text": "clinical",
+      "parent": 1155,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1042
+    },
+    {
+      "start": 1155,
+      "text": "diagnosis",
+      "parent": 1138,
+      "tree_s_idx": 1146,
+      "tree_e_idx": 1155,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 1042
+    },
+    {
+      "start": 1164,
+      "text": ".",
+      "parent": 1052,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 1042
+    },
+    {
+      "start": 1166,
+      "text": "Such",
+      "parent": 1181,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "lemma": "such",
+      "sent": 1166
+    },
+    {
+      "start": 1171,
+      "text": "biomarker",
+      "parent": 1181,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 1166
+    },
+    {
+      "start": 1181,
+      "text": "studies",
+      "parent": 1194,
+      "tree_s_idx": 1166,
+      "tree_e_idx": 1181,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nsubj",
+      "lemma": "study",
+      "sent": 1166
+    },
+    {
+      "start": 1189,
+      "text": "have",
+      "parent": 1194,
+      "pos": "VERB",
+      "tag": "VBP",
+      "dep": "aux",
+      "sent": 1166
+    },
+    {
+      "start": 1194,
+      "text": "revealed",
+      "tree_s_idx": 1166,
+      "tree_e_idx": 1410,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "reveal",
+      "sent": 1166
+    },
+    {
+      "start": 1203,
+      "text": "that",
+      "parent": 1237,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 1166
+    },
+    {
+      "start": 1208,
+      "text": "a",
+      "parent": 1215,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 1166
+    },
+    {
+      "start": 1210,
+      "text": "huge",
+      "parent": 1215,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1166
+    },
+    {
+      "start": 1215,
+      "text": "window",
+      "parent": 1237,
+      "tree_s_idx": 1208,
+      "tree_e_idx": 1225,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 1166
+    },
+    {
+      "start": 1222,
+      "text": "of",
+      "parent": 1215,
+      "tree_s_idx": 1222,
+      "tree_e_idx": 1225,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "sent": 1166
+    },
+    {
+      "start": 1225,
+      "text": "opportunity",
+      "parent": 1222,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "sent": 1166
+    },
+    {
+      "start": 1237,
+      "text": "exists",
+      "parent": 1194,
+      "tree_s_idx": 1203,
+      "tree_e_idx": 1397,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "ccomp",
+      "lemma": "exist",
+      "sent": 1166
+    },
+    {
+      "start": 1244,
+      "text": "when",
+      "parent": 1345,
+      "pos": "ADV",
+      "tag": "WRB",
+      "dep": "advmod",
+      "sent": 1166
+    },
+    {
+      "start": 1249,
+      "text": "application",
+      "parent": 1345,
+      "tree_s_idx": 1249,
+      "tree_e_idx": 1337,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 1166,
+      "conjuncts": [
+        1296,
+        1329
+      ]
+    },
+    {
+      "start": 1261,
+      "text": "of",
+      "parent": 1264,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1166
+    },
+    {
+      "start": 1264,
+      "text": "NSAIDs",
+      "parent": 1249,
+      "tree_s_idx": 1261,
+      "tree_e_idx": 1264,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "nsaid",
+      "sent": 1166
+    },
+    {
+      "start": 1270,
+      "text": ",",
+      "parent": 1249,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 1166
+    },
+    {
+      "start": 1272,
+      "text": "other",
+      "parent": 1296,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1166
+    },
+    {
+      "start": 1278,
+      "text": "anti-inflammatory",
+      "parent": 1296,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1166
+    },
+    {
+      "start": 1296,
+      "text": "agents",
+      "parent": 1249,
+      "tree_s_idx": 1272,
+      "tree_e_idx": 1296,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "conj",
+      "lemma": "agent",
+      "sent": 1166,
+      "conjuncts": [
+        1249,
+        1329
+      ]
+    },
+    {
+      "start": 1302,
+      "text": ",",
+      "parent": 1249,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 1166
+    },
+    {
+      "start": 1304,
+      "text": "or",
+      "parent": 1249,
+      "pos": "CCONJ",
+      "tag": "CC",
+      "dep": "cc",
+      "sent": 1166
+    },
+    {
+      "start": 1307,
+      "text": "complement",
+      "parent": 1329,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 1166
+    },
+    {
+      "start": 1318,
+      "text": "activation",
+      "parent": 1329,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 1166
+    },
+    {
+      "start": 1329,
+      "text": "blockers",
+      "parent": 1249,
+      "tree_s_idx": 1307,
+      "tree_e_idx": 1329,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "conj",
+      "lemma": "blocker",
+      "sent": 1166,
+      "conjuncts": [
+        1249,
+        1296
+      ]
+    },
+    {
+      "start": 1337,
+      "text": ",",
+      "parent": 1249,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 1166
+    },
+    {
+      "start": 1339,
+      "text": "could",
+      "parent": 1345,
+      "pos": "AUX",
+      "tag": "MD",
+      "dep": "aux",
+      "sent": 1166
+    },
+    {
+      "start": 1345,
+      "text": "arrest",
+      "parent": 1237,
+      "tree_s_idx": 1244,
+      "tree_e_idx": 1372,
+      "pos": "VERB",
+      "tag": "VB",
+      "dep": "advcl",
+      "sent": 1166
+    },
+    {
+      "start": 1352,
+      "text": "further",
+      "parent": 1360,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1166
+    },
+    {
+      "start": 1360,
+      "text": "progress",
+      "parent": 1345,
+      "tree_s_idx": 1352,
+      "tree_e_idx": 1372,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 1166
+    },
+    {
+      "start": 1369,
+      "text": "of",
+      "parent": 1372,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1166
+    },
+    {
+      "start": 1372,
+      "text": "AD",
+      "parent": 1360,
+      "tree_s_idx": 1369,
+      "tree_e_idx": 1372,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "lemma": "ad",
+      "sent": 1166
+    },
+    {
+      "start": 1374,
+      "text": ",",
+      "parent": 1237,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 1166
+    },
+    {
+      "start": 1376,
+      "text": "thus",
+      "parent": 1381,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 1166
+    },
+    {
+      "start": 1381,
+      "text": "eliminating",
+      "parent": 1237,
+      "tree_s_idx": 1376,
+      "tree_e_idx": 1397,
+      "pos": "VERB",
+      "tag": "VBG",
+      "dep": "advcl",
+      "lemma": "eliminate",
+      "sent": 1166
+    },
+    {
+      "start": 1393,
+      "text": "its",
+      "parent": 1397,
+      "pos": "PRON",
+      "tag": "PRP$",
+      "dep": "nmod:poss",
+      "lemma": "-PRON-",
+      "sent": 1166
+    },
+    {
+      "start": 1397,
+      "text": "manifestation",
+      "parent": 1381,
+      "tree_s_idx": 1393,
+      "tree_e_idx": 1397,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "dobj",
+      "sent": 1166
+    },
+    {
+      "start": 1410,
+      "text": ".",
+      "parent": 1194,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 1166
+    },
+    {
+      "start": 1412,
+      "text": "It",
+      "parent": 1422,
+      "pos": "PRON",
+      "tag": "PRP",
+      "dep": "nsubjpass",
+      "lemma": "-PRON-",
+      "sent": 1412
+    },
+    {
+      "start": 1415,
+      "text": "can",
+      "parent": 1422,
+      "pos": "AUX",
+      "tag": "MD",
+      "dep": "aux",
+      "sent": 1412
+    },
+    {
+      "start": 1419,
+      "text": "be",
+      "parent": 1422,
+      "pos": "VERB",
+      "tag": "VB",
+      "dep": "auxpass",
+      "sent": 1412
+    },
+    {
+      "start": 1422,
+      "text": "anticipated",
+      "tree_s_idx": 1412,
+      "tree_e_idx": 1513,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "lemma": "anticipate",
+      "sent": 1412
+    },
+    {
+      "start": 1434,
+      "text": "that",
+      "parent": 1459,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "mark",
+      "sent": 1412
+    },
+    {
+      "start": 1439,
+      "text": "this",
+      "parent": 1444,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 1412
+    },
+    {
+      "start": 1444,
+      "text": "principle",
+      "parent": 1459,
+      "tree_s_idx": 1439,
+      "tree_e_idx": 1444,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "sent": 1412
+    },
+    {
+      "start": 1454,
+      "text": "will",
+      "parent": 1459,
+      "pos": "AUX",
+      "tag": "MD",
+      "dep": "aux",
+      "sent": 1412
+    },
+    {
+      "start": 1459,
+      "text": "apply",
+      "parent": 1422,
+      "tree_s_idx": 1434,
+      "tree_e_idx": 1505,
+      "pos": "VERB",
+      "tag": "VB",
+      "dep": "ccomp",
+      "sent": 1412
+    },
+    {
+      "start": 1465,
+      "text": "to",
+      "parent": 1505,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1412
+    },
+    {
+      "start": 1468,
+      "text": "many",
+      "parent": 1505,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1412
+    },
+    {
+      "start": 1473,
+      "text": "other",
+      "parent": 1505,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1412
+    },
+    {
+      "start": 1479,
+      "text": "chronic",
+      "parent": 1505,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1412
+    },
+    {
+      "start": 1487,
+      "text": "neurodegenerative",
+      "parent": 1505,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1412
+    },
+    {
+      "start": 1505,
+      "text": "diseases",
+      "parent": 1459,
+      "tree_s_idx": 1465,
+      "tree_e_idx": 1505,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "disease",
+      "sent": 1412
+    },
+    {
+      "start": 1513,
+      "text": ".",
+      "parent": 1422,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 1412
+    },
+    {
+      "start": 1515,
+      "text": "Neuroinflammation",
+      "parent": 1583,
+      "tree_s_idx": 1515,
+      "tree_e_idx": 1570,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "lemma": "neuroinflammation",
+      "sent": 1515
+    },
+    {
+      "start": 1532,
+      "text": ",",
+      "parent": 1515,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 1515
+    },
+    {
+      "start": 1534,
+      "text": "discovered",
+      "parent": 1515,
+      "tree_s_idx": 1534,
+      "tree_e_idx": 1570,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "acl",
+      "lemma": "discover",
+      "sent": 1515
+    },
+    {
+      "start": 1545,
+      "text": "in",
+      "parent": 1548,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1515
+    },
+    {
+      "start": 1548,
+      "text": "AD",
+      "parent": 1534,
+      "tree_s_idx": 1545,
+      "tree_e_idx": 1548,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "lemma": "ad",
+      "sent": 1515
+    },
+    {
+      "start": 1551,
+      "text": "more",
+      "parent": 1561,
+      "pos": "ADJ",
+      "tag": "JJR",
+      "dep": "advmod",
+      "sent": 1515
+    },
+    {
+      "start": 1556,
+      "text": "than",
+      "parent": 1561,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "quantmod",
+      "sent": 1515
+    },
+    {
+      "start": 1561,
+      "text": "30",
+      "parent": 1564,
+      "tree_s_idx": 1551,
+      "tree_e_idx": 1561,
+      "pos": "NUM",
+      "tag": "CD",
+      "dep": "nummod",
+      "sent": 1515
+    },
+    {
+      "start": 1564,
+      "text": "years",
+      "parent": 1570,
+      "tree_s_idx": 1551,
+      "tree_e_idx": 1564,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "npadvmod",
+      "lemma": "year",
+      "sent": 1515
+    },
+    {
+      "start": 1570,
+      "text": "ago",
+      "parent": 1534,
+      "tree_s_idx": 1551,
+      "tree_e_idx": 1570,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 1515
+    },
+    {
+      "start": 1573,
+      "text": ",",
+      "parent": 1583,
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "sent": 1515
+    },
+    {
+      "start": 1575,
+      "text": "has",
+      "parent": 1583,
+      "pos": "VERB",
+      "tag": "VBZ",
+      "dep": "aux",
+      "lemma": "have",
+      "sent": 1515
+    },
+    {
+      "start": 1579,
+      "text": "now",
+      "parent": 1583,
+      "pos": "ADV",
+      "tag": "RB",
+      "dep": "advmod",
+      "sent": 1515
+    },
+    {
+      "start": 1583,
+      "text": "become",
+      "tree_s_idx": 1515,
+      "tree_e_idx": 1627,
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "ROOT",
+      "sent": 1515
+    },
+    {
+      "start": 1590,
+      "text": "a",
+      "parent": 1598,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 1515
+    },
+    {
+      "start": 1592,
+      "text": "major",
+      "parent": 1598,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1515
+    },
+    {
+      "start": 1598,
+      "text": "field",
+      "parent": 1583,
+      "tree_s_idx": 1590,
+      "tree_e_idx": 1622,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "attr",
+      "sent": 1515
+    },
+    {
+      "start": 1604,
+      "text": "of",
+      "parent": 1598,
+      "tree_s_idx": 1604,
+      "tree_e_idx": 1613,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "sent": 1515
+    },
+    {
+      "start": 1607,
+      "text": "brain",
+      "parent": 1613,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "compound",
+      "sent": 1515
+    },
+    {
+      "start": 1613,
+      "text": "research",
+      "parent": 1604,
+      "tree_s_idx": 1607,
+      "tree_e_idx": 1613,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "sent": 1515
+    },
+    {
+      "start": 1622,
+      "text": "today",
+      "parent": 1598,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "npadvmod",
+      "sent": 1515
+    },
+    {
+      "start": 1627,
+      "text": ".",
+      "parent": 1583,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 1515
+    },
+    {
+      "start": 1629,
+      "text": "Inhibiting",
+      "parent": 1647,
+      "pos": "VERB",
+      "tag": "VBG",
+      "dep": "csubj",
+      "lemma": "inhibit",
+      "sent": 1629
+    },
+    {
+      "start": 1640,
+      "text": "it",
+      "parent": 1647,
+      "pos": "PRON",
+      "tag": "PRP",
+      "dep": "nsubj",
+      "lemma": "-PRON-",
+      "sent": 1629
+    },
+    {
+      "start": 1643,
+      "text": "may",
+      "parent": 1647,
+      "pos": "AUX",
+      "tag": "MD",
+      "dep": "aux",
+      "sent": 1629
+    },
+    {
+      "start": 1647,
+      "text": "be",
+      "tree_s_idx": 1629,
+      "tree_e_idx": 1720,
+      "pos": "VERB",
+      "tag": "VB",
+      "dep": "ROOT",
+      "sent": 1629
+    },
+    {
+      "start": 1650,
+      "text": "the",
+      "parent": 1654,
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "sent": 1629
+    },
+    {
+      "start": 1654,
+      "text": "key",
+      "parent": 1647,
+      "tree_s_idx": 1650,
+      "tree_e_idx": 1711,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "attr",
+      "sent": 1629
+    },
+    {
+      "start": 1658,
+      "text": "to",
+      "parent": 1672,
+      "pos": "PART",
+      "tag": "TO",
+      "dep": "case",
+      "sent": 1629
+    },
+    {
+      "start": 1661,
+      "text": "successful",
+      "parent": 1672,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1629
+    },
+    {
+      "start": 1672,
+      "text": "treatment",
+      "parent": 1654,
+      "tree_s_idx": 1658,
+      "tree_e_idx": 1711,
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nmod",
+      "sent": 1629
+    },
+    {
+      "start": 1682,
+      "text": "of",
+      "parent": 1711,
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "case",
+      "sent": 1629
+    },
+    {
+      "start": 1685,
+      "text": "many",
+      "parent": 1711,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1629
+    },
+    {
+      "start": 1690,
+      "text": "chronic",
+      "parent": 1711,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1629
+    },
+    {
+      "start": 1698,
+      "text": "neurological",
+      "parent": 1711,
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "sent": 1629
+    },
+    {
+      "start": 1711,
+      "text": "disorders",
+      "parent": 1672,
+      "tree_s_idx": 1682,
+      "tree_e_idx": 1711,
+      "pos": "NOUN",
+      "tag": "NNS",
+      "dep": "nmod",
+      "lemma": "disorder",
+      "sent": 1629
+    },
+    {
+      "start": 1720,
+      "text": ".",
+      "parent": 1647,
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "sent": 1629
+    }
+  ],
+  "entities": [
+    {
+      "start": 30,
+      "end": 38,
+      "text": "research",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 44,
+      "end": 56,
+      "text": "inflammation",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 70,
+      "end": 75,
+      "text": "force",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 83,
+      "end": 95,
+      "text": "pathogenesis",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 99,
+      "end": 118,
+      "text": "Alzheimer's disease",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 120,
+      "end": 122,
+      "text": "AD",
+      "label": "ENTITY",
+      "sent": 0
+    },
+    {
+      "start": 143,
+      "end": 157,
+      "text": "identification",
+      "label": "ENTITY",
+      "sent": 125
+    },
+    {
+      "start": 161,
+      "end": 170,
+      "text": "activated",
+      "label": "ENTITY",
+      "sent": 125
+    },
+    {
+      "start": 171,
+      "end": 180,
+      "text": "microglia",
+      "label": "ENTITY",
+      "sent": 125
+    },
+    {
+      "start": 184,
+      "end": 195,
+      "text": "association",
+      "label": "ENTITY",
+      "sent": 125
+    },
+    {
+      "start": 205,
+      "end": 212,
+      "text": "lesions",
+      "label": "ENTITY",
+      "sent": 125
+    },
+    {
+      "start": 233,
+      "end": 242,
+      "text": "discovery",
+      "label": "ENTITY",
+      "sent": 214
+    },
+    {
+      "start": 248,
+      "end": 269,
+      "text": "rheumatoid arthritics",
+      "label": "ENTITY",
+      "sent": 214
+    },
+    {
+      "start": 293,
+      "end": 317,
+      "text": "anti-inflammatory agents",
+      "label": "ENTITY",
+      "sent": 214
+    },
+    {
+      "start": 351,
+      "end": 358,
+      "text": "disease",
+      "label": "ENTITY",
+      "sent": 214
+    },
+    {
+      "start": 366,
+      "end": 374,
+      "text": "findings",
+      "label": "ENTITY",
+      "sent": 360
+    },
+    {
+      "start": 385,
+      "end": 396,
+      "text": "exploration",
+      "label": "ENTITY",
+      "sent": 360
+    },
+    {
+      "start": 404,
+      "end": 425,
+      "text": "inflammatory pathways",
+      "label": "ENTITY",
+      "sent": 360
+    },
+    {
+      "start": 448,
+      "end": 450,
+      "text": "AD",
+      "label": "ENTITY",
+      "sent": 360
+    },
+    {
+      "start": 451,
+      "end": 463,
+      "text": "pathogenesis",
+      "label": "ENTITY",
+      "sent": 360
+    },
+    {
+      "start": 491,
+      "end": 500,
+      "text": "discovery",
+      "label": "ENTITY",
+      "sent": 465
+    },
+    {
+      "start": 506,
+      "end": 523,
+      "text": "amyloid-\u03b2 protein",
+      "label": "ENTITY",
+      "sent": 465
+    },
+    {
+      "start": 525,
+      "end": 527,
+      "text": "A\u03b2",
+      "label": "ENTITY",
+      "sent": 465
+    },
+    {
+      "start": 529,
+      "end": 538,
+      "text": "activated",
+      "label": "ENTITY",
+      "sent": 465
+    },
+    {
+      "start": 543,
+      "end": 560,
+      "text": "complement system",
+      "label": "ENTITY",
+      "sent": 465
+    },
+    {
+      "start": 588,
+      "end": 607,
+      "text": "anti-inflammatories",
+      "label": "ENTITY",
+      "sent": 562
+    },
+    {
+      "start": 611,
+      "end": 619,
+      "text": "blockers",
+      "label": "ENTITY",
+      "sent": 562
+    },
+    {
+      "start": 623,
+      "end": 644,
+      "text": "complement activation",
+      "label": "ENTITY",
+      "sent": 562
+    },
+    {
+      "start": 659,
+      "end": 682,
+      "text": "epidemiological studies",
+      "label": "ENTITY",
+      "sent": 646
+    },
+    {
+      "start": 721,
+      "end": 758,
+      "text": "non-steroidal anti-inflammatory drugs",
+      "label": "ENTITY",
+      "sent": 646
+    },
+    {
+      "start": 760,
+      "end": 766,
+      "text": "NSAIDs",
+      "label": "ENTITY",
+      "sent": 646
+    },
+    {
+      "start": 771,
+      "end": 773,
+      "text": "AD",
+      "label": "ENTITY",
+      "sent": 646
+    },
+    {
+      "start": 788,
+      "end": 795,
+      "text": "finding",
+      "label": "ENTITY",
+      "sent": 775
+    },
+    {
+      "start": 825,
+      "end": 831,
+      "text": "NSAIDs",
+      "label": "ENTITY",
+      "sent": 775
+    },
+    {
+      "start": 851,
+      "end": 869,
+      "text": "clinical diagnosis",
+      "label": "ENTITY",
+      "sent": 775
+    },
+    {
+      "start": 937,
+      "end": 944,
+      "text": "studies",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 948,
+      "end": 958,
+      "text": "biomarkers",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 967,
+      "end": 976,
+      "text": "amyloid-\u03b2",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 978,
+      "end": 980,
+      "text": "A\u03b2",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 996,
+      "end": 1015,
+      "text": "cerebrospinal fluid",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 1020,
+      "end": 1031,
+      "text": "A\u03b2 deposits",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 1035,
+      "end": 1040,
+      "text": "brain",
+      "label": "ENTITY",
+      "sent": 903
+    },
+    {
+      "start": 1082,
+      "end": 1084,
+      "text": "AD",
+      "label": "ENTITY",
+      "sent": 1042
+    },
+    {
+      "start": 1120,
+      "end": 1137,
+      "text": "cognitive decline",
+      "label": "ENTITY",
+      "sent": 1042
+    },
+    {
+      "start": 1146,
+      "end": 1164,
+      "text": "clinical diagnosis",
+      "label": "ENTITY",
+      "sent": 1042
+    },
+    {
+      "start": 1171,
+      "end": 1188,
+      "text": "biomarker studies",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1264,
+      "end": 1270,
+      "text": "NSAIDs",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1278,
+      "end": 1302,
+      "text": "anti-inflammatory agents",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1307,
+      "end": 1337,
+      "text": "complement activation blockers",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1345,
+      "end": 1351,
+      "text": "arrest",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1372,
+      "end": 1374,
+      "text": "AD",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1397,
+      "end": 1410,
+      "text": "manifestation",
+      "label": "ENTITY",
+      "sent": 1166
+    },
+    {
+      "start": 1479,
+      "end": 1513,
+      "text": "chronic neurodegenerative diseases",
+      "label": "ENTITY",
+      "sent": 1412
+    },
+    {
+      "start": 1515,
+      "end": 1532,
+      "text": "Neuroinflammation",
+      "label": "ENTITY",
+      "sent": 1515
+    },
+    {
+      "start": 1548,
+      "end": 1550,
+      "text": "AD",
+      "label": "ENTITY",
+      "sent": 1515
+    },
+    {
+      "start": 1564,
+      "end": 1569,
+      "text": "years",
+      "label": "ENTITY",
+      "sent": 1515
+    },
+    {
+      "start": 1607,
+      "end": 1621,
+      "text": "brain research",
+      "label": "ENTITY",
+      "sent": 1515
+    },
+    {
+      "start": 1629,
+      "end": 1639,
+      "text": "Inhibiting",
+      "label": "ENTITY",
+      "sent": 1629
+    },
+    {
+      "start": 1672,
+      "end": 1681,
+      "text": "treatment",
+      "label": "ENTITY",
+      "sent": 1629
+    },
+    {
+      "start": 1690,
+      "end": 1697,
+      "text": "chronic",
+      "label": "ENTITY",
+      "sent": 1629
+    },
+    {
+      "start": 1698,
+      "end": 1720,
+      "text": "neurological disorders",
+      "label": "ENTITY",
+      "sent": 1629
+    }
+  ],
+  "sentences": [
+    {
+      "start": 0,
+      "end": 124,
+      "text": "Two basic discoveries spurred research into inflammation as a driving force in the pathogenesis of Alzheimer's disease (AD)."
+    },
+    {
+      "start": 125,
+      "end": 213,
+      "text": "The first was the identification of activated microglia in association with the lesions."
+    },
+    {
+      "start": 214,
+      "end": 359,
+      "text": "The second was the discovery that rheumatoid arthritics, who regularly consume anti-inflammatory agents, were relatively spared from the disease."
+    },
+    {
+      "start": 360,
+      "end": 464,
+      "text": "These findings led to an exploration of the inflammatory pathways that were involved in AD pathogenesis."
+    },
+    {
+      "start": 465,
+      "end": 561,
+      "text": "A pivotal advance was the discovery that amyloid-\u03b2 protein (A\u03b2) activated the complement system."
+    },
+    {
+      "start": 562,
+      "end": 645,
+      "text": "This focused attention on anti-inflammatories as blockers of complement activation."
+    },
+    {
+      "start": 646,
+      "end": 774,
+      "text": "More than 15 epidemiological studies have since showed a sparing effect of non-steroidal anti-inflammatory drugs (NSAIDs) in AD."
+    },
+    {
+      "start": 775,
+      "end": 902,
+      "text": "A consistent finding has been that the longer the NSAIDs were used prior to clinical diagnosis, the greater the sparing effect."
+    },
+    {
+      "start": 903,
+      "end": 1041,
+      "text": "The reason has since emerged from studies of biomarkers such as amyloid-\u03b2 (A\u03b2) levels in the cerebrospinal fluid and A\u03b2 deposits in brain."
+    },
+    {
+      "start": 1042,
+      "end": 1165,
+      "text": "They have established that the onset of AD commences at least a decade before cognitive decline permits clinical diagnosis."
+    },
+    {
+      "start": 1166,
+      "end": 1411,
+      "text": "Such biomarker studies have revealed that a huge window of opportunity exists when application of NSAIDs, other anti-inflammatory agents, or complement activation blockers, could arrest further progress of AD, thus eliminating its manifestation."
+    },
+    {
+      "start": 1412,
+      "end": 1514,
+      "text": "It can be anticipated that this principle will apply to many other chronic neurodegenerative diseases."
+    },
+    {
+      "start": 1515,
+      "end": 1628,
+      "text": "Neuroinflammation, discovered in AD more than 30 years ago, has now become a major field of brain research today."
+    },
+    {
+      "start": 1629,
+      "end": 1721,
+      "text": "Inhibiting it may be the key to successful treatment of many chronic neurological disorders."
+    }
+  ],
+  "noun_chunks": [
+    {
+      "start": 0,
+      "end": 21,
+      "text": "Two basic discoveries",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 30,
+      "end": 38,
+      "text": "research",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 44,
+      "end": 56,
+      "text": "inflammation",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 119,
+      "end": 122,
+      "text": "(AD",
+      "label": "NP",
+      "sent": 0
+    },
+    {
+      "start": 125,
+      "end": 157,
+      "text": "The first was the identification",
+      "label": "NP",
+      "sent": 125
+    },
+    {
+      "start": 214,
+      "end": 224,
+      "text": "The second",
+      "label": "NP",
+      "sent": 214
+    },
+    {
+      "start": 248,
+      "end": 269,
+      "text": "rheumatoid arthritics",
+      "label": "NP",
+      "sent": 214
+    },
+    {
+      "start": 271,
+      "end": 274,
+      "text": "who",
+      "label": "NP",
+      "sent": 214
+    },
+    {
+      "start": 293,
+      "end": 317,
+      "text": "anti-inflammatory agents",
+      "label": "NP",
+      "sent": 214
+    },
+    {
+      "start": 360,
+      "end": 374,
+      "text": "These findings",
+      "label": "NP",
+      "sent": 360
+    },
+    {
+      "start": 426,
+      "end": 430,
+      "text": "that",
+      "label": "NP",
+      "sent": 360
+    },
+    {
+      "start": 465,
+      "end": 482,
+      "text": "A pivotal advance",
+      "label": "NP",
+      "sent": 465
+    },
+    {
+      "start": 506,
+      "end": 523,
+      "text": "amyloid-\u03b2 protein",
+      "label": "NP",
+      "sent": 465
+    },
+    {
+      "start": 524,
+      "end": 527,
+      "text": "(A\u03b2",
+      "label": "NP",
+      "sent": 465
+    },
+    {
+      "start": 539,
+      "end": 560,
+      "text": "the complement system",
+      "label": "NP",
+      "sent": 465
+    },
+    {
+      "start": 562,
+      "end": 584,
+      "text": "This focused attention",
+      "label": "NP",
+      "sent": 562
+    },
+    {
+      "start": 646,
+      "end": 682,
+      "text": "More than 15 epidemiological studies",
+      "label": "NP",
+      "sent": 646
+    },
+    {
+      "start": 701,
+      "end": 717,
+      "text": "a sparing effect",
+      "label": "NP",
+      "sent": 646
+    },
+    {
+      "start": 759,
+      "end": 766,
+      "text": "(NSAIDs",
+      "label": "NP",
+      "sent": 646
+    },
+    {
+      "start": 775,
+      "end": 795,
+      "text": "A consistent finding",
+      "label": "NP",
+      "sent": 775
+    },
+    {
+      "start": 821,
+      "end": 831,
+      "text": "the NSAIDs",
+      "label": "NP",
+      "sent": 775
+    },
+    {
+      "start": 871,
+      "end": 901,
+      "text": "the greater the sparing effect",
+      "label": "NP",
+      "sent": 775
+    },
+    {
+      "start": 903,
+      "end": 913,
+      "text": "The reason",
+      "label": "NP",
+      "sent": 903
+    },
+    {
+      "start": 977,
+      "end": 980,
+      "text": "(A\u03b2",
+      "label": "NP",
+      "sent": 903
+    },
+    {
+      "start": 1042,
+      "end": 1046,
+      "text": "They",
+      "label": "NP",
+      "sent": 1042
+    },
+    {
+      "start": 1069,
+      "end": 1078,
+      "text": "the onset",
+      "label": "NP",
+      "sent": 1042
+    },
+    {
+      "start": 1095,
+      "end": 1112,
+      "text": "at least a decade",
+      "label": "NP",
+      "sent": 1042
+    },
+    {
+      "start": 1113,
+      "end": 1137,
+      "text": "before cognitive decline",
+      "label": "NP",
+      "sent": 1042
+    },
+    {
+      "start": 1146,
+      "end": 1164,
+      "text": "clinical diagnosis",
+      "label": "NP",
+      "sent": 1042
+    },
+    {
+      "start": 1166,
+      "end": 1188,
+      "text": "Such biomarker studies",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1208,
+      "end": 1221,
+      "text": "a huge window",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1225,
+      "end": 1236,
+      "text": "opportunity",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1249,
+      "end": 1260,
+      "text": "application",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1272,
+      "end": 1302,
+      "text": "other anti-inflammatory agents",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1307,
+      "end": 1337,
+      "text": "complement activation blockers",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1352,
+      "end": 1368,
+      "text": "further progress",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1393,
+      "end": 1410,
+      "text": "its manifestation",
+      "label": "NP",
+      "sent": 1166
+    },
+    {
+      "start": 1412,
+      "end": 1414,
+      "text": "It",
+      "label": "NP",
+      "sent": 1412
+    },
+    {
+      "start": 1439,
+      "end": 1453,
+      "text": "this principle",
+      "label": "NP",
+      "sent": 1412
+    },
+    {
+      "start": 1515,
+      "end": 1532,
+      "text": "Neuroinflammation",
+      "label": "NP",
+      "sent": 1515
+    },
+    {
+      "start": 1590,
+      "end": 1603,
+      "text": "a major field",
+      "label": "NP",
+      "sent": 1515
+    },
+    {
+      "start": 1607,
+      "end": 1621,
+      "text": "brain research",
+      "label": "NP",
+      "sent": 1515
+    },
+    {
+      "start": 1640,
+      "end": 1642,
+      "text": "it",
+      "label": "NP",
+      "sent": 1629
+    },
+    {
+      "start": 1650,
+      "end": 1657,
+      "text": "the key",
+      "label": "NP",
+      "sent": 1629
+    }
+  ]
+}
