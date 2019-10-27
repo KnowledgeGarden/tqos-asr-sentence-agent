@@ -341,6 +341,13 @@ public class SentenceAgent implements ISentenceAgent {
 		environment.logDebug("SentenceAgent.processTokens\n"+sentenceObject+"\n"+triple);
 	}
 	
+	/**
+	 * Look for subject, predicate, and object in sentence - a simple NPN check
+	 * @param triple
+	 * @param sentenceObject
+	 * @param tokens
+	 * @param nounChunks
+	 */
 	void doTokensNounChunks(JSONObject triple, JSONObject sentenceObject, List<JSONObject> tokens, List<JSONObject> nounChunks) {
 		environment.logDebug("SentenceAgent.doTokensNounChunks-\n"+sentenceObject+"\n"+triple);
 		int where = findSubject(triple, sentenceObject, tokens, nounChunks);
@@ -348,57 +355,6 @@ public class SentenceAgent implements ISentenceAgent {
 		where = findPredicate(where, triple, sentenceObject, tokens);
 		environment.logDebug("SentenceAgent.doTokensNounChunks-1\n"+sentenceObject+"\n"+triple);
 		where = findObject(where, triple, sentenceObject, tokens, nounChunks);
-		
-		/*int sentenceLength = sentenceObject.getAsString("text").length();
-		int toklen = tokens.size();
-		int nclen = nounChunks.size();
-		int cursor = 0;
-		int tStart, nStart;
-		JSONObject t, n;
-		//Look for subject first
-		boolean haveSubject = false;
-		boolean havePredicate = false;
-		boolean haveObject = false;
-		boolean triedSubject = false;
-		int tokenCursor, nounCursor;
-		for (tokenCursor=0; tokenCursor< toklen; tokenCursor++) {
-			t = tokens.get(tokenCursor);
-			tStart = t.getAsNumber("start").intValue();
-			//watch for predicates
-			if ("VERB".equalsIgnoreCase(t.getAsString("POS"))) {
-				addPredToTriple(triple, t);
-				havePredicate = true;
-			} else if ("ADV".equalsIgnoreCase(t.getAsString("POS"))) {
-				if (tStart < t.getAsNumber("parent").intValue())
-					addPredToTriple(triple, t);
-			}
-			
-			
-			if (!triedSubject && !haveSubject && !havePredicate && !haveObject) {
-				for (int j = 0; j< nclen; j++) {
-					triedSubject = true;
-					n = nounChunks.get(j);
-					nStart = n.getAsNumber("start").intValue();
-					if (tStart == nStart) {
-						//we have a hit
-						triple.put("subject", n);
-						haveSubject = true;
-						break;
-					}
-				}
-			} else if (triedSubject && havePredicate && !haveObject) {
-				for (int j = 0; j< nclen; j++) {
-					n = nounChunks.get(j);
-					nStart = n.getAsNumber("start").intValue();
-					if (tStart == nStart) {
-						//we have a hit
-						triple.put("object", n);
-						haveSubject = true;
-						break;
-					}
-				}
-			}
-		}*/
 	}
 	
 	int findSubject(JSONObject triple, JSONObject sentenceObject, List<JSONObject> tokens, List<JSONObject> nounChunks) {
