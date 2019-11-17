@@ -7,6 +7,7 @@ package org.topicquests.os.asr.dbpedia;
 
 import org.topicquests.os.asr.reader.sentences.SentencesEnvironment;
 import org.topicquests.support.ResultPojo;
+import org.topicquests.support.api.IEnvironment;
 import org.topicquests.support.api.IResult;
 
 import net.minidev.json.JSONObject;
@@ -16,13 +17,13 @@ import net.minidev.json.JSONObject;
  *
  */
 public class SpotlightClient {
-	private SentencesEnvironment environment;
+	private IEnvironment environment;
 	private DBpediaSpotlightClient client;
 
 	/**
 	 * 
 	 */
-	public SpotlightClient(SentencesEnvironment env) {
+	public SpotlightClient(IEnvironment env) {
 		environment = env;
 		client = new DBpediaSpotlightClient(environment);
 	}

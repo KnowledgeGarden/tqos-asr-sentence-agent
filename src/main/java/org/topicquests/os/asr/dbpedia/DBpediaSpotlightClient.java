@@ -24,6 +24,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClients;
 import org.topicquests.os.asr.reader.sentences.SentencesEnvironment;
+import org.topicquests.support.api.IEnvironment;
 
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
@@ -39,13 +40,13 @@ import java.net.URLEncoder;
  */
 
 public class DBpediaSpotlightClient  {
-	private SentencesEnvironment environment;
+	private IEnvironment environment;
 
     private final static String API_URL = "http://model.dbpedia-spotlight.org/en/"; //"http://spotlight.dbpedia.org/";
 	private static final double CONFIDENCE = 0.5;
 	private static final int SUPPORT = 0;
 
-	public DBpediaSpotlightClient(SentencesEnvironment env) {
+	public DBpediaSpotlightClient(IEnvironment env) {
 		environment = env;
 	}
 

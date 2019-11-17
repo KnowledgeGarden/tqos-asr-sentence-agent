@@ -11,6 +11,9 @@
 
 <properties>
 
+	<parameter name="VocabServerURl" value="localhost" /> <!--  coordinate with VocabServer -->
+	<parameter name="VocabServerPort" value="7989" /> <!-- coordinate with VocabServer -->
+
 	<!-- this server commmunicates with the Statistics Server -->
 	<parameter name="StatServerURl" value="localhost" /> <!--  coordinate with StatServer -->
 	<parameter name="StatServerPort" value="6900" /> <!-- coordinate with StatServer -->
