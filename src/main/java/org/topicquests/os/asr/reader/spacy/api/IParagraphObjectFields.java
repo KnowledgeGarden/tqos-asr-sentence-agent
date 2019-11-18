@@ -20,12 +20,15 @@ public interface IParagraphObjectFields {
 		SENTENCE_PATTERNS		= "sentencePattern",
 		BEFORE_NOUN_TOKENS		= "beforeNouns",
 		AFTER_NOUN_TOKENS		= "afterNouns",
+		SENTENCE_TOKEN_START	= "tokenStart",
+		SENTENCE_TOKEN_END		= "tokenEnd",
+		SENTENCE_TEXT			= "text",
 		//these are paragraph level
 		PARAGRAPH_TOKEN_MAP_KEY	=	"paragraphTokens",
 		PARAGRAPH_ID			= "paragraphId",
 		DOCUMENT_ID				= "documentId",
 		MASTER_TOKENS			= "masterTokens", // all tokens with nouns updated
-		POS_TOKENS				= "posTokens",
+		PARAGRAPH_RAW_TOKENS	= "rawTokens",
 		NOUN_CHUNKS				= "nounChunks",
 		NOUN_PHRASES			= "nounPhrases",
 		MAIN_ENTITIES			= "mainEntities", // from the main model

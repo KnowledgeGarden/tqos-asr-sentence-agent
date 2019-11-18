@@ -650,7 +650,7 @@ public class NounScanner {
 	void spotNounsB(List<JSONObject> tokens) {
 		int len = tokens.size();
 		JSONObject tokA, tokB, tokC;
-		environment.logDebug("SPOTNOUNA\n"+tokens);
+		environment.logDebug("SPOTNOUNB\n"+tokens);
 		for (int i=0;i<len;i++) {
 			tokA = tokens.get(i);
 			if (tokA.getAsString("pos").equals("DET")) {
@@ -659,7 +659,7 @@ public class NounScanner {
 					tokC = tokens.get(i+2);
 					if (tokC.getAsString("pos").equals("VERB")) {
 						tokB = tokens.get(i+1);
-						environment.logDebug("SPOTNOUNA-1 "+tokB+"\n"+tokA+" "+tokB);
+						environment.logDebug("SPOTNOUNB-1 "+tokB+"\n"+tokA+" "+tokB);
 						if (tokB.getAsString("dep").equals("nsubj"))
 							tokB.put("pos", "NOUN");
 					}
@@ -674,6 +674,7 @@ public class NounScanner {
 	 * @param tokens
 	 */
 	void spotNounsA(List<JSONObject> tokens) {
+		environment.logDebug("SPOTNOUNA\n"+tokens);
 		int len = tokens.size();
 		JSONObject tokA, tokB, tokC;
 		for (int i=0;i<len;i++) {
