@@ -238,7 +238,7 @@ This one below fails
 				environment.logDebug("XXX "+preds.size()+" "+tok+"\n"+preds);
 			// see if tok is a VERB and it is not a ROOT verb
 			// but a ROOT can exist if the preds list has some adverbs, etc
-			if ("VERB".equalsIgnoreCase(pos)) {
+			if (ISpacyConstants.VERB.equalsIgnoreCase(pos)) {
 				tFound = found;
 				boolean vFound = vpVerb(i, found, tok, preds, paragraphTokenMap, /*nounPhraseMap,*/ entityNounMap, tokens);
 				if (!tFound && vFound) {
@@ -247,36 +247,36 @@ This one below fails
 					//Verb/aux:ADP:Verb/ROOT
 					// we wish to allow an ADP as the next term
 					// but we don't want an ADP in otherwise, so we hold haveVERB off
-					if (!dep.equalsIgnoreCase("aux"))
+					if (!dep.equalsIgnoreCase(ISpacyConstants.AUX))
 						haveVERB = true;
 				} else if (tFound && !vFound) {
 					//trailing VERB
-					if (!dep.equalsIgnoreCase("aux"))
+					if (!dep.equalsIgnoreCase(ISpacyConstants.AUX))
 						haveVERB = true;
 				}
-			} else if (found && "NOUN".equalsIgnoreCase(pos)) { 
+			} else if (found && ISpacyConstants.NOUN.equalsIgnoreCase(pos)) { 
 				//for the case where a noun follows a verb
 				// we must trap for a noun here first,
 				// since this particular NOUN might follow a particular VERB
 				found = vpNoun(i, found, tok, preds);
 			// if it is an AUX which has a VERB as the next word, take it
-			} else if (!haveVERB && ("AUX".equalsIgnoreCase(pos))) { 
+			} else if (!haveVERB && (ISpacyConstants.AUX.equalsIgnoreCase(pos))) { 
 				tFound = found;
 				found = vpAux(i, found, tok, preds, tokens);
 				if (!tFound && found)
 					start = tok.getAsNumber("start");
 			// if it is an ADV which has a parent later in the tokens, take it
 			// may need to study this one
-			} else if (!haveVERB && "ADV".equalsIgnoreCase(pos)) {
+			} else if (!haveVERB && ISpacyConstants.ADV.equalsIgnoreCase(pos)) {
 				tFound = found;
 				found = vpAdv(i, found, tok, preds);
 				if (!tFound && found)
 					start = tok.getAsNumber("start");
 			// if a VERB is found, and this is an ADP, take it
-			} else if (!haveVERB && found && "ADP".equalsIgnoreCase(pos)) {
+			} else if (!haveVERB && found && ISpacyConstants.ADP.equalsIgnoreCase(pos)) {
 				vpAdp(i, found, tok, preds, tokens);
 			// NOUN or PRON will stop this
-			} else if (found && (!"VERB".equalsIgnoreCase(pos))
+			} else if (found && (!ISpacyConstants.VERB.equalsIgnoreCase(pos))
 					/*"NOUN".equalsIgnoreCase(pos) || 
 						"PRON".equalsIgnoreCase(pos) ||
 						"ADJ".equalsIgnoreCase(pos))*/) {
@@ -301,7 +301,7 @@ This one below fails
 		//	return false;
 		if ("amod".equalsIgnoreCase(dep)) {
 			JSONObject tok1 = tokens.get(where+1); //TODO DANGER or array out of bounds
-			if ("NOUN".equalsIgnoreCase(tok1.getAsString("pos"))) {
+			if (ISpacyConstants.NOUN.equalsIgnoreCase(tok1.getAsString("pos"))) {
 				preds.add(tok);
 				if (!found) {
 					return true;
@@ -329,7 +329,7 @@ This one below fails
 	 */
 	boolean vpAux(int where, boolean found, JSONObject tok, List<JSONObject> preds, List<JSONObject>tokens) {
 		JSONObject tok1 = tokens.get(where+1); //TODO DANGER or array out of bounds
-		if ("VERB".equalsIgnoreCase(tok1.getAsString("pos"))) {
+		if (ISpacyConstants.VERB.equalsIgnoreCase(tok1.getAsString("pos"))) {
 			preds.add(tok);
 			return true;
 		}
@@ -339,7 +339,7 @@ This one below fails
 	void vpAdp(int where, boolean found, JSONObject tok, List<JSONObject> preds, List<JSONObject>tokens) {
 		//must filter out if follows a verb, or test if is followed by a verb
 		JSONObject tok1 = tokens.get(where+1); //TODO DANGER or array out of bounds
-		if ("VERB".equalsIgnoreCase(tok1.getAsString("pos")))
+		if (ISpacyConstants.VERB.equalsIgnoreCase(tok1.getAsString("pos")))
 			preds.add(tok);
 	}
 	
@@ -354,8 +354,8 @@ This one below fails
 	boolean vpNoun(int where, boolean found, JSONObject tok, List<JSONObject> preds) {
 		// case 1: preds has just one verb and that verb is an amod
 		JSONObject tok1 = preds.get(0);
-		if ("VERB".equalsIgnoreCase(tok1.getAsString("pos")) &&
-			"amod".equalsIgnoreCase(tok1.getAsString("dep"))) {
+		if (ISpacyConstants.VERB.equalsIgnoreCase(tok1.getAsString("pos")) &&
+			ISpacyConstants.AMOD.equalsIgnoreCase(tok1.getAsString("dep"))) {
 			preds.add(tok);
 			return true;		
 		}
