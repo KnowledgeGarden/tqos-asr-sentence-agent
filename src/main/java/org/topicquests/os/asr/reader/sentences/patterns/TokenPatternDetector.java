@@ -5,6 +5,7 @@
  */
 package org.topicquests.os.asr.reader.sentences.patterns;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.topicquests.os.asr.reader.sentences.patterns.api.ISentenceTokenPatterns;
@@ -26,6 +27,22 @@ public class TokenPatternDetector {
 		environment = env;
 	}
 
+	/**
+	 * Returns the sentence pattern for the given {@code sentenceTokens}
+	 * @param sentenceTokens
+	 * @return
+	 */
+	public String getSentencePattern(List<JSONObject> sentenceTokens) {
+		String result = "";
+		Iterator<JSONObject> itr = sentenceTokens.iterator();
+		JSONObject tok;
+		while (itr.hasNext()) {
+			tok = itr.next();
+			result += " "+getPattern(tok);
+		}
+		return result.trim();
+	}
+	
 	public String getPattern(JSONObject token) {
 		environment.logDebug("GetPattern\n"+token);
 		String pos = token.getAsString("pos");
