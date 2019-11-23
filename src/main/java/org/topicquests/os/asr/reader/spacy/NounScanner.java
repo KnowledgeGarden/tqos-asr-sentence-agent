@@ -360,31 +360,34 @@ public class NounScanner {
 			sint = tStart.intValue();
 			pos = tok.getAsString("pos");
 			dep = tok.getAsString("dep");
-			if ("NOUN".equalsIgnoreCase(pos)) {  // NOUN case
+			if (ISpacyConstants.NOUN.equalsIgnoreCase(pos)) {  // NOUN case
 				tFound = found;
 				found |= npNoun(i, found, tok, nouns, tokens);
 				if (!tFound && found)
 					start = tok.getAsNumber("start");
-			} else if (!found && "VERB".equalsIgnoreCase(pos)) { // VERB case
+			} else if (!found && ISpacyConstants.VERB.equalsIgnoreCase(pos)) { // VERB case
 				tFound = found;
 				found |= npVerb(i, found, tok, nouns, tokens);
 				if (!tFound && found)
 					start = tok.getAsNumber("start");
-			} else if ("ADJ".equalsIgnoreCase(pos)) { // ADJ case
+			} else if (ISpacyConstants.ADJ.equalsIgnoreCase(pos)) { // ADJ case
 				//anti-anflammatory agent GOOD
 				//huge window  NOT GOOD
-				environment.logDebug("NPy "+tok+"\n"+nouns);
-				tFound = found;
-				found |= npAdjective(i, found, tok, nouns, tokens);
-				if (!tFound && found)
-					start = tok.getAsNumber("start");
+				// many something NOT GOOD
+				if (isSafeADJ(tok.getAsString("text"))) {
+					environment.logDebug("NPy "+tok+"\n"+nouns);
+					tFound = found;
+					found |= npAdjective(i, found, tok, nouns, tokens);
+					if (!tFound && found)
+						start = tok.getAsNumber("start");
+				}
 			//} else if (found && "ADP".equalsIgnoreCase(pos)) {
 				//NOUN/nsubj:ADP/prep:NOUN/pobj
 				//TODO disabled: made far too many messy noun phrases
 				//npAdp(i, found, tok, nouns, tokens);
 			} else if (found) { // STOPPING RULE
 				// noun phrases end with a non-noun
-				if (!"NOUN".equalsIgnoreCase(pos)) {
+				if (!ISpacyConstants.NOUN.equalsIgnoreCase(pos)) {
 					environment.logDebug("NP+\n"+nouns);
 					if (nouns.size() > 1) {
 						nounPhraseMap.put(start.toString(), util.toPhrase(ISpacyConstants.NOUN, start.intValue(), nouns));
@@ -417,6 +420,17 @@ public class NounScanner {
 		}
 	}
 	
+	boolean isSafeADJ(String adj) {
+		boolean result = true;
+		result &= adj.equalsIgnoreCase("many");
+		if (result)
+			result &= adj.equalsIgnoreCase("some");
+		else
+			return result;
+		if (result)
+			result &= adj.equalsIgnoreCase("several");
+		return result;
+	}
 	///////////////////////////
 	// These are cases in the quest for a nounPhrase
 	///////////////////////////
@@ -467,7 +481,7 @@ public class NounScanner {
 		pos = tok.getAsString("pos");
 		dep = tok.getAsString("dep");
 		JSONObject tok1 = tokens.get(where+1); //Dangerous
-		if ("NOUN".equalsIgnoreCase(tok1.getAsString("pos"))) {
+		if (ISpacyConstants.NOUN.equalsIgnoreCase(tok1.getAsString("pos"))) {
 			nouns.add(tok);
 		}
 	}
@@ -501,7 +515,7 @@ public class NounScanner {
 			 if (where > 0) {
 				 //Verb/amod following an ADP
 				 JSONObject tok1 = tokens.get(where-1);
-				 if ("ADP".equalsIgnoreCase(tok1.getAsString("pos"))) {
+				 if (ISpacyConstants.ADP.equalsIgnoreCase(tok1.getAsString("pos"))) {
 					environment.logDebug("NPx-1 "+tok+"\n"+nouns);
 					nouns.add(tok);
 					if (!found) {
@@ -604,7 +618,7 @@ public class NounScanner {
 			tok = itr.next();
 			pos = tok.getAsString("pos");
 			tTerm = tok.getAsString("text");
-			if ("NOUN".equalsIgnoreCase(pos)) {
+			if (ISpacyConstants.NOUN.equalsIgnoreCase(pos)) {
 				found = term.equalsIgnoreCase(tTerm);
 				//if (word.equals("Alzheimer's"))
 				//	environment.logDebug("ISNOUNWORD "+word+" | "+term+" | "+found+"\n"+tok);
@@ -653,15 +667,15 @@ public class NounScanner {
 		environment.logDebug("SPOTNOUNB\n"+tokens);
 		for (int i=0;i<len;i++) {
 			tokA = tokens.get(i);
-			if (tokA.getAsString("pos").equals("DET")) {
+			if (tokA.getAsString("pos").equals(ISpacyConstants.DET)) {
 				
 				if (i+2 < len) {
 					tokC = tokens.get(i+2);
-					if (tokC.getAsString("pos").equals("VERB")) {
+					if (tokC.getAsString("pos").equals(ISpacyConstants.VERB)) {
 						tokB = tokens.get(i+1);
 						environment.logDebug("SPOTNOUNB-1 "+tokB+"\n"+tokA+" "+tokB);
 						if (tokB.getAsString("dep").equals("nsubj"))
-							tokB.put("pos", "NOUN");
+							tokB.put("pos", ISpacyConstants.NOUN);
 					}
 				}
 			}
@@ -684,7 +698,7 @@ public class NounScanner {
 					//Most general form
 					// Any DET/nsubj is a NOUN
 					// We may have to specialize if this causes trouble
-					tokA.put("pos", "NOUN");
+					tokA.put("pos", ISpacyConstants.NOUN);
 					/*if (i+2 < len) {
 						tokC = tokens.get(i+2);
 						if (tokC.getAsString("pos").equals("VERB")) {

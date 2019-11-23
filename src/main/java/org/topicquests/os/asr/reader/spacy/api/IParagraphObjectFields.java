@@ -1,5 +1,7 @@
 /**
- * 
+ * Copyright 2019, TopicQuests Foundation
+ *  This source code is available under the terms of the Affero General Public License v3.
+ *  Please see LICENSE.txt for full license terms, including the availability of proprietary exceptions.
  */
 package org.topicquests.os.asr.reader.spacy.api;
 
@@ -17,7 +19,8 @@ public interface IParagraphObjectFields {
 		SENTENCE_ARRAY_LIST_KEY		= "sentenceArray", // possibly many arrays
 		/** SentenceTokens are drawn from a paragraphs MASTER_TOKENS after all processing is finished */
 		SENTENCE_TOKEN_LIST		= "sentenceTokens",
-		SENTENCE_PATTERNS		= "sentencePattern",
+		SENTENCE_TOKEN_PATTERNS		= "sentenceTokenPattern", // patterns of individual tokens
+		SENTENCE_PATTERN		= "sentencePattern",	// pattern of entire sentence, e.g. NVN
 		BEFORE_NOUN_TOKENS		= "beforeNouns",
 		AFTER_NOUN_TOKENS		= "afterNouns",
 		SENTENCE_TOKEN_START	= "tokenStart",
@@ -34,6 +37,7 @@ public interface IParagraphObjectFields {
 		MAIN_ENTITIES			= "mainEntities", // from the main model
 		ENTITY_NOUNS			= "entityNouns",
 		PREDICATE_PHRASES		= "predPhrases",
+		TRAILING_PHRASES		= "trailingPhrases",
 		VOCAB_NOUNS				= "vocabNouns",
 		VOCAB_VERBS				= "vocabVerbs";
 }

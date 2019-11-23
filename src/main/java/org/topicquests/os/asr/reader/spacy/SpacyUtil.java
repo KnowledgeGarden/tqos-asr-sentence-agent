@@ -64,11 +64,11 @@ public class SpacyUtil {
 		JSONObject jo = (JSONObject)tokenMap.get(index.toString());
 		String pos = jo.getAsString("pos");
 		boolean result = (pos.equals(ISpacyConstants.NOUN) || pos.equals(ISpacyConstants.PRON));
-		if (!result) {
+		//if (!result) {
 			//result = nounPhraseMap.get(index) != null;
 			//if (!result)
-				result = entityNounMap.get(index) != null;
-		}
+		//		result = entityNounMap.get(index) != null;
+		//}
 		return result;
 	}
 	
