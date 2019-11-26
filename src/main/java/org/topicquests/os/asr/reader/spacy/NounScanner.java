@@ -9,10 +9,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.topicquests.os.asr.reader.sentences.SentencesEnvironment;
 import org.topicquests.os.asr.reader.spacy.api.IParagraphObjectFields;
 import org.topicquests.os.asr.reader.spacy.api.ISpacyConstants;
+import org.topicquests.support.ResultPojo;
 import org.topicquests.support.api.IEnvironment;
+import org.topicquests.support.api.IResult;
 
 import net.minidev.json.JSONObject;
 
@@ -332,10 +333,10 @@ public class NounScanner {
 	 * @param sentenceObject
 	 * @param paragraphObject
 	 */
-	public void scan4NounPhrases(List<JSONObject> tokens, JSONObject paragraphObject) {
-		environment.logDebug("CNP\n"+tokens);
+	public void scan4NounPhrases(List<JSONObject> masterTokens, JSONObject paragraphObject) {
+		environment.logDebug("CNP\n"+masterTokens);
 		//JSONObject paragraphTokenMap = (JSONObject)paragraphObject.get(ISpacyInterpreter.PARAGRAPH_TOKEN_MAP_KEY);
-		int toklen = tokens.size();
+		int toklen = masterTokens.size();
 		JSONObject tok;
 		// noun phrases are just lists of tokens
 		List<JSONObject> nouns = new ArrayList<JSONObject>();
@@ -353,7 +354,7 @@ public class NounScanner {
 		boolean tFound = false;
 		for (int i = 0; i<toklen; i++) {
 			//for every token in this sentence
-			tok = tokens.get(i);
+			tok = masterTokens.get(i);
 			if (found)
 				environment.logDebug("NP "+tok+"\n"+nouns);
 			tStart = tok.getAsNumber("start");
@@ -362,12 +363,12 @@ public class NounScanner {
 			dep = tok.getAsString("dep");
 			if (ISpacyConstants.NOUN.equalsIgnoreCase(pos)) {  // NOUN case
 				tFound = found;
-				found |= npNoun(i, found, tok, nouns, tokens);
+				found |= npNoun(i, found, tok, nouns, masterTokens);
 				if (!tFound && found)
 					start = tok.getAsNumber("start");
 			} else if (!found && ISpacyConstants.VERB.equalsIgnoreCase(pos)) { // VERB case
 				tFound = found;
-				found |= npVerb(i, found, tok, nouns, tokens);
+				found |= npVerb(i, found, tok, nouns, masterTokens);
 				if (!tFound && found)
 					start = tok.getAsNumber("start");
 			} else if (ISpacyConstants.ADJ.equalsIgnoreCase(pos)) { // ADJ case
@@ -377,7 +378,7 @@ public class NounScanner {
 				if (isSafeADJ(tok.getAsString("text"))) {
 					environment.logDebug("NPy "+tok+"\n"+nouns);
 					tFound = found;
-					found |= npAdjective(i, found, tok, nouns, tokens);
+					found |= npAdjective(i, found, tok, nouns, masterTokens);
 					if (!tFound && found)
 						start = tok.getAsNumber("start");
 				}
@@ -410,7 +411,7 @@ public class NounScanner {
 				tStart = tok.getAsNumber("start");
 				sint = tStart.intValue();
 					tTerm = tok.getAsString("text");
-					found = termIsNounPhrase(tTerm, tokens);
+					found = termIsNounPhrase(tTerm, masterTokens);
 					if (found) {
 						// this might overwrite an existing list
 						nounPhraseMap.put(tStart.toString(), tok);
@@ -418,6 +419,7 @@ public class NounScanner {
 					}
 			}		
 		}
+		this.spotPatternNounPhrases(masterTokens, paragraphObject.getAsString(IParagraphObjectFields.MASTER_PATTERNS), nouns);
 	}
 	
 	boolean isSafeADJ(String adj) {
@@ -431,6 +433,142 @@ public class NounScanner {
 			result &= adj.equalsIgnoreCase("several");
 		return result;
 	}
+	///////////////////////////
+	// pattern case
+	// ADJamod NOUNdobj ADPcase "on" NOUN  (on, into, ...)
+	// "new insights on blah"
+	//NOUNdobj ADPcase "on" NOUN  (on, into, ...)
+	// "insights into blah"
+	//////////////////////////
+	void spotPatternNounPhrases(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
+		nPattern_0(masterTokens, masterPatterns, nouns);
+		nPattern_1(masterTokens, masterPatterns, nouns);
+		nPattern_2(masterTokens, masterPatterns, nouns);
+	}
+
+	/**
+	 * Look for the pattern "ADJ NOUN ADP NOUN NOUN"
+	 * @param masterTokens
+	 * @param masterPatterns
+	 * @param nouns
+	 */
+	void nPattern_0(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
+		String [] myPattern = new String [] {"ADJ", "NOUN", "ADP", "NOUN", "NOUN"};
+		String [] patterns = masterPatterns.split(" ");
+		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
+		List<JSONObject> l = new ArrayList<JSONObject>();
+		int pointer = 0;
+		IResult r;
+		while (l != null) {
+			r = gatherPattern(pointer, myPattern, patterns, masterTokens);
+			l = (List<JSONObject>)r.getResultObject();
+			environment.logDebug("NounScanner.nPattern_0 "+l);
+			if (l != null) {
+				col.add(l);
+				pointer += ((Integer)r.getResultObjectA()).intValue()+myPattern.length;
+			}
+		}
+	}
+
+	/**
+	 * Look for the pattern "ADJ NOUN ADP NOUN"
+	 * 	which is a subset of <em>nPattern_0</em>
+	 * @param masterTokens
+	 * @param masterPatterns
+	 * @param nouns
+	 */
+	void nPattern_1(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
+		String [] myPattern = new String [] {"ADJ", "NOUN", "ADP", "NOUN"};
+		String [] patterns = masterPatterns.split(" ");
+		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
+		List<JSONObject> l = new ArrayList<JSONObject>();
+		int pointer = 0;
+		IResult r;
+		while (l != null) {
+			r = gatherPattern(pointer, myPattern, patterns, masterTokens);
+			l = (List<JSONObject>)r.getResultObject();
+			environment.logDebug("NounScanner.nPattern_1 "+l);
+			if (l != null) {
+				col.add(l);
+				pointer += ((Integer)r.getResultObjectA()).intValue()+myPattern.length;
+			}
+		}
+	}
+	
+	/**
+	 * Look for the pattern "NOUN", "ADP", "NOUN"
+	 * 	which is a subset of <em>nPattern_1</em>
+	 * @param masterTokens
+	 * @param masterPatterns
+	 * @param nouns
+	 */
+	void nPattern_2(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
+		String [] myPattern = new String [] {"NOUN", "ADP", "NOUN"};
+		String [] patterns = masterPatterns.split(" ");
+		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
+		List<JSONObject> l = new ArrayList<JSONObject>();
+		int pointer = 0;
+		IResult r;
+		while (l != null) {
+			r = gatherPattern(pointer, myPattern, patterns, masterTokens);
+			l = (List<JSONObject>)r.getResultObject();
+			environment.logDebug("NounScanner.nPattern_2 "+l);
+			if (l != null) {
+				col.add(l);
+				pointer += ((Integer)r.getResultObjectA()).intValue()+myPattern.length;
+			}
+		}
+	}
+	
+	IResult gatherPattern(int offset, String [] ptn, String [] allPatterns, List<JSONObject> tokens) {
+		IResult r = new ResultPojo();
+		List<JSONObject> result = null;
+		int where = -1;
+		int myLen = ptn.length;
+		int allLen = allPatterns.length;
+		int tokLen = tokens.size();
+		String pstart, p1, p2;
+		int temp = 0;
+		boolean found = true;
+		for (int i= offset; i< allLen; i++) {
+			pstart = allPatterns[i];
+			temp = i;
+			for (int j=0; j<myLen; j++) {
+				p1 = allPatterns[i+j];
+				p2 = ptn[j];
+				environment.logDebug("NounScanner.locatePattern "+i+" "+j+" "+found+" "+p1+" "+p2);
+				if ((i+j) < allLen) {
+					if (!p1.startsWith(p2)) {
+						found = false;
+						break;
+					}
+				} else {
+					// ran out of room
+					found = false;
+					break;
+				}
+				
+			}
+			// we went through the entire pattern
+			if (found) {
+				where = temp;
+				break;
+			} else
+				found = true;
+			
+		}
+		if (found && where > -1) {
+			result = new ArrayList<JSONObject>();
+			int start = where, lim = start+myLen;
+			environment.logDebug("NounScanner.locatePattern-1 "+start+" "+lim+" "+tokLen);
+			for (int i=start;i<lim; i++)
+				result.add(tokens.get(i));
+		}
+		r.setResultObject(result);
+		r.setResultObjectA(new Integer(where));
+		return r;
+	}
+
 	///////////////////////////
 	// These are cases in the quest for a nounPhrase
 	///////////////////////////
@@ -636,11 +774,11 @@ public class NounScanner {
 	/**
 	 * Spotting nouns runs along the full token list for a sentence
 	 * and makes any surgical switches from one POS to NOUN according to rules
-	 * @param tokens
+	 * @param masterTokens  from the ParagraphObject
 	 */
-	public void spotNouns(List<JSONObject> tokens) {
-		spotNounsA(tokens);
-		spotNounsB(tokens);
+	public void spotNouns(List<JSONObject> masterTokens) {
+		spotNounsA(masterTokens);
+		spotNounsB(masterTokens);
 	}
 	
 	///////////////////

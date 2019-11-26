@@ -55,6 +55,9 @@ public class ReaderCore implements ICoreReader {
 		// MasterTokens
 		List<JSONObject> masterTokens = new ArrayList<JSONObject>();
 		paragraphObject.put(IParagraphObjectFields.MASTER_TOKENS, masterTokens);
+		// ParagraphRawTokens
+		List<JSONObject> rawTokens = new ArrayList<JSONObject>();
+		paragraphObject.put(IParagraphObjectFields.PARAGRAPH_RAW_TOKENS, rawTokens);
 
 		// paragraph token map
 		// A map of tokens in the paragraph indexed on their start position
@@ -71,6 +74,7 @@ public class ReaderCore implements ICoreReader {
 			st = jo.getAsNumber("start");
 			paragraphTokenMap.put(st.toString(), jo);
 			masterTokens.add(jo);
+			rawTokens.add(jo);
 		}
 		environment.logDebug("PARAGRAPHTOKENS\n"+paragraphTokenMap);
 		// create a list for DBpedia hits

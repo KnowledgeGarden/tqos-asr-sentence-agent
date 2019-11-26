@@ -31,6 +31,7 @@ public interface IParagraphObjectFields {
 		PARAGRAPH_ID			= "paragraphId",
 		DOCUMENT_ID				= "documentId",
 		MASTER_TOKENS			= "masterTokens", // all tokens with nouns updated
+		MASTER_PATTERNS			= "masterPatterns", // String of patterns for masterTokens
 		PARAGRAPH_RAW_TOKENS	= "rawTokens",
 		NOUN_CHUNKS				= "nounChunks",
 		NOUN_PHRASES			= "nounPhrases",
