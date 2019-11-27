@@ -36,10 +36,11 @@ public class SpacyUtil {
 		JSONObject jo;
 		StringBuilder buf = new StringBuilder();
 		Iterator<JSONObject> itr = nouns.iterator();
-		int width = 0;
+		int width = nouns.size();
+		Number end = nouns.get(width-1).getAsNumber("start");
+		result.put("end", end);
 		while (itr.hasNext()) {
 			jo = itr.next();
-			width++;
 			buf = buf.append(jo.getAsString("text")+" ");
 		}
 		result.put("width", Integer.toString(width));

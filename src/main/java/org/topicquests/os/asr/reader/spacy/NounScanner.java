@@ -24,303 +24,24 @@ import net.minidev.json.JSONObject;
 public class NounScanner {
 	private IEnvironment environment;
 	private SpacyUtil util;
+	private List<String> detectorPatterns;
 	/**
 	 * 
 	 */
 	public NounScanner(IEnvironment env, SpacyUtil u) {
 		environment = env;
 		util = u;
+		detectorPatterns = new ArrayList<String>();
+		// gather NounPatterns from the sentence-agent-config.xml file
+		List<List<String>> ptns = (List<List<String>>)environment.getProperties().get("NounPhrasePatterns");
+		Iterator<List<String>>itr = ptns.iterator();
+		List<String>l;
+		while (itr.hasNext()) {
+			l = itr.next();
+			detectorPatterns.add(l.get(1));
+		}
 	}
-/** Strange
- * Got this
-{
-	"pos": "vp",
-	"start": 1575,
-	"text": "has now become"
-}, {
-	"parent": 1598,
-	"pos": "DET",
-	"start": 1590,
-	"text": "a",
-	"tag": "DT",
-	"sent": 1515,
-	"dep": "det"
-}, {
-	"pos": "np",
-	"start": 1592,
-	"text": "years major field" <<<< "years" does not belong here
-}, { <<<<<<<<<<<<<<<<<<<<<dropped "of"
-	"start": 1607,
-	"end": 1621,
-	"text": "brain research",
-	"label": "ENTITY",
-	"sent": 1515
-}
- * From this
-{
-		"parent": 1561,
-		"pos": "ADJ",
-		"start": 1551,
-		"text": "more",
-		"tag": "JJR",
-		"sent": 1515,
-		"dep": "advmod"
-	}, {
-		"parent": 1561,
-		"pos": "ADP",
-		"start": 1556,
-		"text": "than",
-		"tag": "IN",
-		"sent": 1515,
-		"dep": "quantmod"
-	}, {
-		"parent": 1564,
-		"pos": "NUM",
-		"tree_e_idx": 1561,
-		"start": 1561,
-		"tree_s_idx": 1551,
-		"text": "30",
-		"tag": "CD",
-		"sent": 1515,
-		"dep": "nummod"
-	}, {
-		"parent": 1570,
-		"pos": "NOUN",
-		"tree_e_idx": 1564,
-		"start": 1564,
-		"lemma": "year",
-		"tree_s_idx": 1551,
-		"text": "years",
-		"tag": "NNS",
-		"sent": 1515,
-		"dep": "npadvmod"
-	}, {
-		"parent": 1534,
-		"pos": "ADV",
-		"tree_e_idx": 1570,
-		"start": 1570,
-		"tree_s_idx": 1551,
-		"text": "ago",
-		"tag": "RB",
-		"sent": 1515,
-		"dep": "advmod"
-	}, {
-		"parent": 1583,
-		"pos": "PUNCT",
-		"start": 1573,
-		"text": ",",
-		"tag": ",",
-		"sent": 1515,
-		"dep": "punct"
-	}, {
-		"parent": 1583,
-		"pos": "VERB",
-		"start": 1575,
-		"lemma": "have",
-		"text": "has",
-		"tag": "VBZ",
-		"sent": 1515,
-		"dep": "aux"
-	}, {
-		"parent": 1583,
-		"pos": "ADV",
-		"start": 1579,
-		"text": "now",
-		"tag": "RB",
-		"sent": 1515,
-		"dep": "advmod"
-	}, {
-		"pos": "VERB",
-		"tree_e_idx": 1627,
-		"start": 1583,
-		"tree_s_idx": 1515,
-		"text": "become",
-		"tag": "VBN",
-		"sent": 1515,
-		"dep": "ROOT"
-	}, {
-		"parent": 1598,
-		"pos": "DET",
-		"start": 1590,
-		"text": "a",
-		"tag": "DT",
-		"sent": 1515,
-		"dep": "det"
-	}, { <<<<<<<<<<< "major field of brain research" would be the NP
-			except that we dropped "of" so this should be two NPs
-			major field   and brain research
-		"parent": 1598,  <<< start noun phrase
-		"pos": "ADJ",
-		"start": 1592,
-		"text": "major",
-		"tag": "JJ",
-		"sent": 1515,
-		"dep": "amod"
-	}, {
-		"parent": 1583,
-		"pos": "NOUN",
-		"tree_e_idx": 1622,
-		"start": 1598,
-		"tree_s_idx": 1590,
-		"text": "field",
-		"tag": "NN",
-		"sent": 1515,
-		"dep": "attr"
-	}, {
-		"parent": 1598,
-		"pos": "ADP",
-		"tree_e_idx": 1613,
-		"start": 1604,
-		"tree_s_idx": 1604,
-		"text": "of",
-		"tag": "IN",
-		"sent": 1515,
-		"dep": "prep"
-	}, {
-		"parent": 1613,
-		"pos": "NOUN",
-		"start": 1607,
-		"text": "brain",
-		"tag": "NN",
-		"sent": 1515,
-		"dep": "compound"
-	}, {
-		"parent": 1604,
-		"pos": "NOUN",
-		"tree_e_idx": 1613,
-		"start": 1613,
-		"tree_s_idx": 1607,
-		"text": "research",
-		"tag": "NN",
-		"sent": 1515,
-		"dep": "pobj"  <<<<<< that should stop this
-	}, {
-		"parent": 1598,
-		"pos": "NOUN",
-		"start": 1622,
-		"text": "today",
-		"tag": "NN",
-		"sent": 1515,
-		"dep": "npadvmod"
-	} 
- */
-/** Possible noun phrase
- * HAD TO KILL THIS ONE
- * NOUN/nsubj:ADP/prep:NOUN/pobj
-{
-	"pos": "np",
-	"start": 1210,
-	"text": "huge window" << ADJ/amod:NOUN/nsubm should not make a phrase
-}, 
 
-{
-			"parent": 1215,
-			"pos": "ADJ",  << must ignore this
-			"start": 1210,
-			"text": "huge",
-			"tag": "JJ",
-			"sent": 1166,
-			"dep": "amod"
-		}, {
-			"parent": 1237,
-			"pos": "NOUN",
-			"tree_e_idx": 1225,
-			"start": 1215,
-			"tree_s_idx": 1208,
-			"text": "window",
-			"tag": "NN",
-			"sent": 1166,
-			"dep": "nsubj"
-		}
-{
-	"parent": 1215,
-	"pos": "ADP",  << must allow this if followed by NOUN/pobj or psubj
-	"tree_e_idx": 1225,
-	"start": 1222,
-	"tree_s_idx": 1222,
-	"text": "of",
-	"tag": "IN",
-	"sent": 1166,
-	"dep": "prep"
-}, {
-	"parent": 1222,
-	"pos": "NOUN",
-	"start": 1225,
-	"text": "opportunity",
-	"tag": "NN",
-	"sent": 1166,
-	"dep": "pobj"
-}
- */
-	
-/**
-{
-			"parent": 567,   <<<<< Refers back to a NounPhrase
-			"pos": "DET",
-			"start": 562,
-			"lemma": "this",
-			"text": "This", <<<< NOUN
-			"tag": "DT",
-			"sent": 562,
-			"dep": "nsubj"
-		}, {
-			"parent": 575,   <<<<<<Start VerbPhrase NOT A NOUN PHRASE
-			"pos": "VERB",
-			"tree_e_idx": 567,
-			"start": 567,
-			"lemma": "focus",
-			"tree_s_idx": 562,
-			"text": "focused",
-			"tag": "VBD",
-			"sent": 562,
-			"dep": "amod"
-		}, {
-			"pos": "NOUN",
-			"tree_e_idx": 644,
-			"start": 575,
-			"tree_s_idx": 562,
-			"text": "attention",
-			"tag": "NN",
-			"sent": 562,
-			"dep": "ROOT"	<<<<<<<<End VerbPhrase
-		}, {
-			"parent": 588,
-			"pos": "ADP",
-			"start": 585,
-			"text": "on",
-			"tag": "IN",
-			"sent": 562,
-			"dep": "case"
-		}, {
-			"parent": 575,
-			"pos": "NOUN",
-			"tree_e_idx": 588,
-			"start": 588,
-			"lemma": "anti-inflammatorie",
-			"tree_s_idx": 585,
-			"text": "anti-inflammatories",
-			"tag": "NNS",
-			"sent": 562,
-			"dep": "nmod"
-		}
- */
-/* bad
- * failed to pick up both as one
- * looks like missing adj -- ADJ/amod:ADJ/amod:NOUN
- {
-	"parent": 753,
-	"pos": "ADJ",
-	"start": 721,
-	"text": "non-steroidal",
-	"tag": "JJ",
-	"sent": 646,
-	"dep": "amod"
-}, {
-	"pos": "np",
-	"start": 735,
-	"text": "anti-inflammatory drugs"
-}
- */
 	///////////////////////////
 	// NounPhrase Scanning
 	// Ripple through sentence tokens
@@ -419,7 +140,7 @@ public class NounScanner {
 					}
 			}		
 		}
-		this.spotPatternNounPhrases(masterTokens, paragraphObject.getAsString(IParagraphObjectFields.MASTER_PATTERNS), nouns);
+		this.spotPatternNounPhrases(masterTokens, paragraphObject.getAsString(IParagraphObjectFields.MASTER_PATTERNS), nounPhraseMap);
 	}
 	
 	boolean isSafeADJ(String adj) {
@@ -439,21 +160,121 @@ public class NounScanner {
 	// "new insights on blah"
 	//NOUNdobj ADPcase "on" NOUN  (on, into, ...)
 	// "insights into blah"
+	// the basic principles of voltage sensing and gating currents
 	//////////////////////////
-	void spotPatternNounPhrases(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
-		nPattern_0(masterTokens, masterPatterns, nouns);
-		nPattern_1(masterTokens, masterPatterns, nouns);
-		nPattern_2(masterTokens, masterPatterns, nouns);
+	void spotPatternNounPhrases(List<JSONObject> masterTokens, String masterPatterns, JSONObject nounPhraseMap) {
+		//Run a group of subpatterns - a being longest nPattern_3
+		Iterator<String> itr = this.detectorPatterns.iterator();
+		String ptn;
+		List<List<JSONObject>> aaa = null;
+		List<List<JSONObject>> xxx = null;
+		int counter = 0;
+		while (itr.hasNext()) {
+			ptn = itr.next();
+			if (counter++ == 0)
+				aaa = nPattern_0(masterTokens, masterPatterns, ptn);
+			else {
+				xxx = nPattern_0(masterTokens, masterPatterns, ptn);
+				xxx = mergePatterns(aaa, xxx);
+				counter = 0;
+			}
+				
+		}
+		environment.logDebug("NounScanner.spotPattrnNounPhrases\n"+xxx);
+		toPhrases(xxx, nounPhraseMap, ISpacyConstants.NOUN);
 	}
 
+	void toPhrases(List<List<JSONObject>> newStuff, JSONObject phraseMap, String pos) {
+		environment.logDebug("NounScanner.toPhrases\n"+newStuff+"\n"+phraseMap);
+		if (newStuff.isEmpty()) return;
+		List<JSONObject> it;
+		Iterator<List<JSONObject>> itr = newStuff.iterator();
+		Number start, end;
+		int width, len;
+		JSONObject tok;
+		JSONObject newToken;
+		String text = "";
+		while (itr.hasNext()) {
+			it = itr.next();
+			width = it.size();
+			tok = it.get(0);
+			start = tok.getAsNumber("start");
+			phraseMap.put(start.toString(), util.toPhrase(pos, start.intValue(), it));
+			environment.logDebug("NounScanner.toPhrases-2\n"+phraseMap);
+		}
+	}
+	
+	List<List<JSONObject>> mergePatterns(List<List<JSONObject>> a, List<List<JSONObject>> b ) {
+		List<List<JSONObject>> result = null;
+		List<List<JSONObject>> x;
+		int len1 = a.size(), len2 = b.size();
+		if (len1 > len2) {
+			result = a;
+			x = b;
+		} else {
+			result = b;
+			x = a;
+		}
+		len1 = x.size();
+		environment.logDebug("NounScanner.mergePatterns\n"+result+"\n"+x);
+		JSONObject tok;
+		List<JSONObject> c;
+		List<List<JSONObject>> adders = new ArrayList<List<JSONObject>>();
+		for (int i=0; i<len1; i++) {
+			c = result.get(i);
+			if (!isSubset(c, result)) {
+				adders.add(c);
+			}
+		}
+		result.addAll(adders);
+		return result;
+	}
+	
+	boolean isSubset(List<JSONObject> a, List<List<JSONObject>> result) {
+		boolean truth = result.contains(a);
+		if (!truth) {
+			int len = result.size();
+			
+			List<JSONObject> x;
+			for (int i=0; i<len; i++) {
+				x = result.get(i);
+				truth &= _isSubset(a, x);
+				if (truth)
+					break;
+			}
+		}
+
+		return truth;
+	}
+	
+	boolean _isSubset(List<JSONObject> a, List<JSONObject> b) {
+		boolean truth = false;
+		int len1 = a.size(), len2 = b.size();
+		List<JSONObject> x, y;
+		if (len1 > len2) {
+			x = a;
+			y = b;
+		} else {
+			x = b;
+			y = a;
+		}
+		len1 = y.size();
+		for (int i=0; i<len1; i++) {
+			truth &= x.contains(y);
+			if (truth)
+				break;
+		}
+		return truth;
+	}
+	
 	/**
 	 * Look for the pattern "ADJ NOUN ADP NOUN NOUN"
 	 * @param masterTokens
 	 * @param masterPatterns
-	 * @param nouns
+	 * @return
 	 */
-	void nPattern_0(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
-		String [] myPattern = new String [] {"ADJ", "NOUN", "ADP", "NOUN", "NOUN"};
+	List<List<JSONObject>> nPattern_0(List<JSONObject> masterTokens, String masterPatterns, String pattern) {
+		String [] myPattern = pattern.split(" ");
 		String [] patterns = masterPatterns.split(" ");
 		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
 		List<JSONObject> l = new ArrayList<JSONObject>();
@@ -468,58 +289,9 @@ public class NounScanner {
 				pointer += ((Integer)r.getResultObjectA()).intValue()+myPattern.length;
 			}
 		}
+		return col;
 	}
 
-	/**
-	 * Look for the pattern "ADJ NOUN ADP NOUN"
-	 * 	which is a subset of <em>nPattern_0</em>
-	 * @param masterTokens
-	 * @param masterPatterns
-	 * @param nouns
-	 */
-	void nPattern_1(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
-		String [] myPattern = new String [] {"ADJ", "NOUN", "ADP", "NOUN"};
-		String [] patterns = masterPatterns.split(" ");
-		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
-		List<JSONObject> l = new ArrayList<JSONObject>();
-		int pointer = 0;
-		IResult r;
-		while (l != null) {
-			r = gatherPattern(pointer, myPattern, patterns, masterTokens);
-			l = (List<JSONObject>)r.getResultObject();
-			environment.logDebug("NounScanner.nPattern_1 "+l);
-			if (l != null) {
-				col.add(l);
-				pointer += ((Integer)r.getResultObjectA()).intValue()+myPattern.length;
-			}
-		}
-	}
-	
-	/**
-	 * Look for the pattern "NOUN", "ADP", "NOUN"
-	 * 	which is a subset of <em>nPattern_1</em>
-	 * @param masterTokens
-	 * @param masterPatterns
-	 * @param nouns
-	 */
-	void nPattern_2(List<JSONObject> masterTokens, String masterPatterns, List<JSONObject> nouns) {
-		String [] myPattern = new String [] {"NOUN", "ADP", "NOUN"};
-		String [] patterns = masterPatterns.split(" ");
-		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
-		List<JSONObject> l = new ArrayList<JSONObject>();
-		int pointer = 0;
-		IResult r;
-		while (l != null) {
-			r = gatherPattern(pointer, myPattern, patterns, masterTokens);
-			l = (List<JSONObject>)r.getResultObject();
-			environment.logDebug("NounScanner.nPattern_2 "+l);
-			if (l != null) {
-				col.add(l);
-				pointer += ((Integer)r.getResultObjectA()).intValue()+myPattern.length;
-			}
-		}
-	}
-	
 	IResult gatherPattern(int offset, String [] ptn, String [] allPatterns, List<JSONObject> tokens) {
 		IResult r = new ResultPojo();
 		List<JSONObject> result = null;
