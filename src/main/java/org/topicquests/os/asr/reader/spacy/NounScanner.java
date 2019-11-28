@@ -64,7 +64,7 @@ public class NounScanner {
 		// we accumulate noun phrases as a map start/tokenlist
 		JSONObject nounPhraseMap = new JSONObject();
 		paragraphObject.put(IParagraphObjectFields.NOUN_PHRASES, nounPhraseMap);
-		Number tStart;
+/*		Number tStart;
 		String pos;
 		Number start = 0;
 		boolean found = false;
@@ -140,6 +140,7 @@ public class NounScanner {
 					}
 			}		
 		}
+*/
 		this.spotPatternNounPhrases(masterTokens, paragraphObject.getAsString(IParagraphObjectFields.MASTER_PATTERNS), nounPhraseMap);
 	}
 	
@@ -292,6 +293,14 @@ public class NounScanner {
 		return col;
 	}
 
+	/**
+	 * 
+	 * @param offset
+	 * @param ptn		the pattern being tested
+	 * @param allPatterns
+	 * @param tokens
+	 * @return
+	 */
 	IResult gatherPattern(int offset, String [] ptn, String [] allPatterns, List<JSONObject> tokens) {
 		IResult r = new ResultPojo();
 		List<JSONObject> result = null;
@@ -329,18 +338,73 @@ public class NounScanner {
 				found = true;
 			
 		}
+		boolean isValid = true;
+		JSONObject tok = null;
 		if (found && where > -1) {
 			result = new ArrayList<JSONObject>();
 			int start = where, lim = start+myLen;
 			environment.logDebug("NounScanner.locatePattern-1 "+start+" "+lim+" "+tokLen);
-			for (int i=start;i<lim; i++)
-				result.add(tokens.get(i));
+			boolean isFirst = true;
+			for (int i=start;i<lim; i++) {
+				tok = tokens.get(i);
+				isValid &= validateToken(isFirst, i, tok, tokens);
+				if (isValid)
+					result.add(tokens.get(i));
+				else
+					break;
+				isFirst = false;
+			}
 		}
-		r.setResultObject(result);
-		r.setResultObjectA(new Integer(where));
+		environment.logDebug("NounScanner.locatePattern-2 "+isValid+"\n"+tok);
+		if (isValid) {
+			r.setResultObject(result);
+			r.setResultObjectA(new Integer(where));
+		}
 		return r;
 	}
 
+	/**
+	 * Returns {@code false} if this is a NOUN followed by a ")"
+	 * because we don't want to include acronyms in triples, or <br/>
+	 * NOUN followed by a "," or by a CCONJ hinting this might be a conjunction
+	 * @param isFirst
+	 * @param where
+	 * @param token
+	 * @param masterTokens
+	 * @return
+	 */
+	boolean validateToken(boolean isFirst, int where, JSONObject token, List<JSONObject> masterTokens) {
+		boolean result = true;
+		if (isFirst) {
+			int len = masterTokens.size();
+			JSONObject jo;
+			boolean x;
+			if (token.getAsString("pos").equals(ISpacyConstants.NOUN)) {
+				jo = masterTokens.get(where+1);
+				x = !(jo.getAsString("pos").equals(ISpacyConstants.ADP) && jo.getAsString("text").equals("of"));
+				environment.logDebug("NounScanner.validateToken "+x+"\n"+jo+"\n"+token);
+				if (!x)
+					return false;
+				else {
+					if ((where-1) > 0) {
+						jo = masterTokens.get(where-1);
+						x = !(jo.getAsString("pos").equals(ISpacyConstants.DET));
+					}
+				}
+				/*result &= jo.getAsString("pos").equals(ISpacyConstants.PUNCT) && jo.getAsString("tag").equals("-RRB-");
+				if (result) {
+					result &= jo.getAsString("pos").equals(ISpacyConstants.PUNCT) && jo.getAsString("text").equals(",");
+					if (result) {
+						result &= jo.getAsString("pos").equals(ISpacyConstants.CCONJ);
+			
+					}
+				}*/
+			}
+		}
+		environment.logDebug("NounScanner.validateToken+ "+result+"\n"+token);
+		
+		return result;
+	}
 	///////////////////////////
 	// These are cases in the quest for a nounPhrase
 	///////////////////////////
