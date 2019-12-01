@@ -100,7 +100,7 @@ public class ReaderCore implements ICoreReader {
 		JSONObject sx;
 		int sstart, send;
 		Number  nFirst = null, nLast = null;
-		
+
 		Iterator<JSONObject> sitr = sentences.iterator();
 		while (sitr.hasNext()) {
 			//for each sentence
