@@ -5,6 +5,8 @@
  */
 package org.topicquests.os.asr.reader.sentences;
 
+import java.util.Map;
+
 import org.topicquests.asr.general.GeneralDatabaseEnvironment;
 import org.topicquests.asr.general.document.api.IDocumentClient;
 import org.topicquests.asr.paragraph.api.IParagraphClient;
@@ -18,6 +20,7 @@ import org.topicquests.os.asr.api.ISentenceProvider;
 import org.topicquests.os.asr.api.IStatisticsClient;
 import org.topicquests.os.asr.ncbo.NCBOAnnotator;
 import org.topicquests.support.RootEnvironment;
+import org.topicquests.support.config.Configurator;
 /**
  * @author jackpark
  *
@@ -33,6 +36,8 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 	private IParagraphClient paragraphDatabase;
 	private GeneralDatabaseEnvironment generalEnvironment;
 	private NCBOAnnotator annotator;
+	private Map<String,Object>kafkaProps;
+
 	/**
 	 * This environment is made to be extended
 	 * @param configPath
@@ -49,6 +54,7 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 		sentenceProvider = new SentenceProvider(this);
 		paragraphProvider = new ParagraphProvider(this);
 		annotator = new NCBOAnnotator(this);
+		kafkaProps = Configurator.getProperties("kafka-topics.xml");
 
 		instance = this;
 		Runtime.getRuntime().addShutdownHook(new Thread() {
@@ -62,6 +68,10 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 	
 	public static SentencesEnvironment getInstance() {
 		return instance;
+	}
+	
+	public Map<String, Object> getKafkaTopicProperties() {
+		return kafkaProps;
 	}
 	
 	public NCBOAnnotator getAnnotator() {
