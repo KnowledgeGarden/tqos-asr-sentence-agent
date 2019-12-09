@@ -5,6 +5,10 @@
  */
 package org.topicquests.os.asr;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.topicquests.asr.sentence.api.ISentenceClient;
 import org.topicquests.hyperbrane.ConcordanceSentence;
 import org.topicquests.hyperbrane.api.ISentence;
@@ -57,5 +61,24 @@ public class SentenceProvider implements ISentenceProvider {
 		IResult result = sentenceDatabase.update(sentence.getID(), sentence.getData());
 		return result;
 	}
+
+	@Override
+	public Iterator<JSONObject> iterateSentencesByParagraph(String paraId) {
+		IResult r = sentenceDatabase.listByParagraphId(paraId);
+		List<JSONObject> l = (List<JSONObject>)r.getResultObject();
+		if (l == null)
+			l = new ArrayList<JSONObject>();
+		return l.iterator();
+	}
+
+	@Override
+	public Iterator<JSONObject> iterateSentencesByDocument(String docId) {
+		IResult r = sentenceDatabase.listByDocId(docId);
+		List<JSONObject> l = (List<JSONObject>)r.getResultObject();
+		if (l == null)
+			l = new ArrayList<JSONObject>();
+		return l.iterator();
+	}
+
 
 }

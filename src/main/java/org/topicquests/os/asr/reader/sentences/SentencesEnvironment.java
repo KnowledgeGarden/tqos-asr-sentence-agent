@@ -7,12 +7,16 @@ package org.topicquests.os.asr.reader.sentences;
 
 import org.topicquests.asr.general.GeneralDatabaseEnvironment;
 import org.topicquests.asr.general.document.api.IDocumentClient;
+import org.topicquests.asr.paragraph.api.IParagraphClient;
 import org.topicquests.asr.sentence.api.ISentenceClient;
 import org.topicquests.os.asr.DocumentProvider;
+import org.topicquests.os.asr.ParagraphProvider;
 import org.topicquests.os.asr.SentenceProvider;
 import org.topicquests.os.asr.api.IDocumentProvider;
+import org.topicquests.os.asr.api.IParagraphProvider;
 import org.topicquests.os.asr.api.ISentenceProvider;
 import org.topicquests.os.asr.api.IStatisticsClient;
+import org.topicquests.os.asr.ncbo.NCBOAnnotator;
 import org.topicquests.support.RootEnvironment;
 /**
  * @author jackpark
@@ -23,10 +27,12 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 	private IStatisticsClient stats;
 	private ISentenceProvider sentenceProvider;
 	private IDocumentProvider documentProvider;
+	private IParagraphProvider paragraphProvider;
 	private IDocumentClient documentDatabase;
 	private ISentenceClient sentenceDatabase;
+	private IParagraphClient paragraphDatabase;
 	private GeneralDatabaseEnvironment generalEnvironment;
-	
+	private NCBOAnnotator annotator;
 	/**
 	 * This environment is made to be extended
 	 * @param configPath
@@ -38,8 +44,11 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 		generalEnvironment = new GeneralDatabaseEnvironment(schemaName);
 		sentenceDatabase = generalEnvironment.getSentenceClient();
 		documentDatabase = generalEnvironment.getDocumentClient();
+		paragraphDatabase = generalEnvironment.getParagraphClient();
 		documentProvider = new DocumentProvider(this);
 		sentenceProvider = new SentenceProvider(this);
+		paragraphProvider = new ParagraphProvider(this);
+		annotator = new NCBOAnnotator(this);
 
 		instance = this;
 		Runtime.getRuntime().addShutdownHook(new Thread() {
@@ -55,6 +64,10 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 		return instance;
 	}
 	
+	public NCBOAnnotator getAnnotator() {
+		return annotator;
+	}
+	
 	public GeneralDatabaseEnvironment getGeneralDatabaseEnvironment() {
 		return generalEnvironment;
 	}
@@ -67,6 +80,14 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 	}
 	public ISentenceClient getSentenceDatabase() {
 		return sentenceDatabase;
+	}
+	
+	public IParagraphClient getParagraphDatabase() {
+		return paragraphDatabase;
+	}
+	
+	public IParagraphProvider getParagraphProvider() {
+		return paragraphProvider;
 	}
 
 	public ISentenceProvider getSentenceProvider() {
