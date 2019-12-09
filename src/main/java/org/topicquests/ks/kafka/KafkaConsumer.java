@@ -20,8 +20,8 @@ public class KafkaConsumer extends StringMessageConsumer {
 	 * @param topic
 	 * @param listener
 	 */
-	public KafkaConsumer(IEnvironment e, String topic, IMessageConsumerListener listener) {
-		super(e, (String)null, topic, listener, false);
+	public KafkaConsumer(IEnvironment e, String groupId, String topic, IMessageConsumerListener listener) {
+		super(e, groupId, topic, listener, false);
 		//All the work isin the listener
 	}
 
