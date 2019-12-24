@@ -18,7 +18,8 @@ import org.topicquests.os.asr.api.IDocumentProvider;
 import org.topicquests.os.asr.api.IParagraphProvider;
 import org.topicquests.os.asr.api.ISentenceProvider;
 import org.topicquests.os.asr.api.IStatisticsClient;
-import org.topicquests.os.asr.ncbo.NCBOAnnotator;
+import org.topicquests.os.asr.paragraph.ParagraphDocHttpClient;
+import org.topicquests.os.asr.reader.sentences.api.ISentenceAgent;
 import org.topicquests.support.RootEnvironment;
 import org.topicquests.support.config.Configurator;
 /**
@@ -35,8 +36,9 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 	private ISentenceClient sentenceDatabase;
 	private IParagraphClient paragraphDatabase;
 	private GeneralDatabaseEnvironment generalEnvironment;
-	private NCBOAnnotator annotator;
 	private Map<String,Object>kafkaProps;
+	private ISentenceAgent sentenceAgent;
+	private ParagraphDocHttpClient paraDocClient;
 
 	/**
 	 * This environment is made to be extended
@@ -53,9 +55,8 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 		documentProvider = new DocumentProvider(this);
 		sentenceProvider = new SentenceProvider(this);
 		paragraphProvider = new ParagraphProvider(this);
-		annotator = new NCBOAnnotator(this);
 		kafkaProps = Configurator.getProperties("kafka-topics.xml");
-
+		paraDocClient = new ParagraphDocHttpClient(this);
 		instance = this;
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			
@@ -70,14 +71,14 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 		return instance;
 	}
 	
+	public ParagraphDocHttpClient getParaDocClient() {
+		return paraDocClient;
+	}
+	
 	public Map<String, Object> getKafkaTopicProperties() {
 		return kafkaProps;
 	}
-	
-	public NCBOAnnotator getAnnotator() {
-		return annotator;
-	}
-	
+		
 	public GeneralDatabaseEnvironment getGeneralDatabaseEnvironment() {
 		return generalEnvironment;
 	}

@@ -41,61 +41,69 @@ import java.net.URLEncoder;
 
 public class DBpediaSpotlightClient  {
 	private IEnvironment environment;
-
-    private final static String API_URL = "http://model.dbpedia-spotlight.org/en/"; //"http://spotlight.dbpedia.org/";
-	private static final double CONFIDENCE = 0.5;
-	private static final int SUPPORT = 0;
+//@see https://github.com/dbpedia-spotlight/dbpedia-spotlight-model
+    private final String API_URL;// = "http://api.dbpedia-spotlight.org/en/annotate?"; //"http://spotlight.dbpedia.org/";
+	private final double CONFIDENCE = 0.5;
+	private final int SUPPORT = 0;
+	private final Object syncObj = new Object();
 
 	public DBpediaSpotlightClient(IEnvironment env) {
 		environment = env;
+	    API_URL = environment.getStringProperty("SpotlightURL")+"/annotate?";
 	}
 
 	public JSONObject extract(String text) throws Exception {
         environment.logDebug("DBpediaSpotlight.extract "+text);
-		//System.out.println("DBSC-1 "+text.text());
-		String spotlightResponse;
+ 		String spotlightResponse = null;
 		CloseableHttpClient httpclient = null;
 		try {
+			synchronized(syncObj) {
+				syncObj.wait(2000);
+			}
 			httpclient = HttpClients.custom()
 			        .setRetryHandler(new DefaultHttpRequestRetryHandler(3, false))
 			        .build();
-			HttpGet httpGet = new HttpGet(API_URL + "annotate/?"+ //"rest/annotate/?" +
+			String query = API_URL +
+					//URLEncoder.encode("text="+text, "utf-8") +
+					//"--data confidence=0.35"); 
 					"confidence=" + CONFIDENCE
 					+ "&support=" + SUPPORT
-					+ "&text=" + URLEncoder.encode(text, "utf-8"));
+					+ "&text=" + URLEncoder.encode(text, "utf-8");
+	        environment.logDebug("DBpediaSpotlight.extract-1 "+query);
+		
+			HttpGet httpGet = new HttpGet(query);
 			httpGet.addHeader("Accept", "application/json");
 			HttpResponse response = httpclient.execute(httpGet);
-
-			System.out.println("Response Code : "
-			                + response.getStatusLine().getStatusCode());
-
-			BufferedReader rd = new BufferedReader(
-				new InputStreamReader(response.getEntity().getContent()));
-
-			StringBuffer result = new StringBuffer();
-			String line = "";
-			while ((line = rd.readLine()) != null) {
-				result.append(line);
+			int statusCode = response.getStatusLine().getStatusCode();
+			environment.logDebug("RESPONSECODE : " + statusCode);
+			if (statusCode == 200) {
+				BufferedReader rd = new BufferedReader(
+					new InputStreamReader(response.getEntity().getContent()));
+	
+				StringBuffer result = new StringBuffer();
+				String line = "";
+				while ((line = rd.readLine()) != null) {
+					result.append(line);
+				}
+				spotlightResponse = result.toString();
+				System.out.println("DBSC-2 "+spotlightResponse);
 			}
-			spotlightResponse = result.toString();
-			System.out.println("DBSC-2 "+spotlightResponse);
 		
 		} finally {
 			if (httpclient != null)
 				httpclient.close();
 		}
 
-		assert spotlightResponse != null;
-
 		JSONObject resultJSON = null;
-		try {
-			JSONParser p = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
-			resultJSON = (JSONObject)p.parse(spotlightResponse);
-		} catch (Exception e) {
-			throw new Exception("Received invalid response from DBpedia Spotlight API.");
+		if (spotlightResponse != null) {
+			try {
+				JSONParser p = new JSONParser(JSONParser.MODE_JSON_SIMPLE);
+				resultJSON = (JSONObject)p.parse(spotlightResponse);
+			} catch (Exception e) {
+				throw new Exception("Received invalid response from DBpedia Spotlight API.");
+			}
 		}
-
-		return resultJSON; //resources;
+		return resultJSON;
 	}
 
 
