@@ -44,7 +44,7 @@ public class TokenPatternDetector {
 	}
 	
 	public String getPattern(JSONObject token) {
-		environment.logDebug("GetPattern\n"+token);
+		//environment.logDebug("GetPattern\n"+token);
 		String pos = token.getAsString("pos");
 		String dep = token.getAsString("dep");
 		String pat = pos;

@@ -61,7 +61,7 @@ public class NounScanner {
 	public void scan4NounPhrases(List<JSONObject> sentenceTokens, 
 								 JSONObject paragraphObject,
 								 String sentencePattern) {
-		environment.logDebug("CNP\n"+sentenceTokens);
+		//environment.logDebug("CNP\n"+sentenceTokens);
 		JSONObject nounPhraseMap = (JSONObject)paragraphObject.get(IParagraphObjectFields.NOUN_PHRASES);
 		this.spotPatternNounPhrases(sentenceTokens, sentencePattern, nounPhraseMap);
 	}
@@ -80,7 +80,7 @@ public class NounScanner {
 
 	void spotPatternNounPhrases(List<JSONObject> sentenceTokens, String sentencePatterns, JSONObject nounPhraseMap) {
 		//Run a group of subpatterns - a being longest nPattern_3
-		environment.logDebug("NounScanner.spotPatternNounPhrases\n"+detectorPatterns);
+		//environment.logDebug("NounScanner.spotPatternNounPhrases\n"+detectorPatterns);
 		Iterator<String> itr = this.detectorPatterns.iterator();
 		String ptn;
 		List<List<JSONObject>> master = new ArrayList<List<JSONObject>>();
@@ -95,12 +95,12 @@ public class NounScanner {
 			}
 		}
 		this.mergePatterns(master);
-		environment.logDebug("NounScanner.spotPattrnNounPhrases\n"+master);
+		//environment.logDebug("NounScanner.spotPattrnNounPhrases\n"+master);
 		toPhrases(master, nounPhraseMap, ISpacyConstants.NOUN);
 	}
 
 	void toPhrases(List<List<JSONObject>> newStuff, JSONObject phraseMap, String pos) {
-		environment.logDebug("NounScanner.toPhrases\n"+newStuff+"\n"+phraseMap);
+		//environment.logDebug("NounScanner.toPhrases\n"+newStuff+"\n"+phraseMap);
 		if (newStuff.isEmpty()) return;
 		List<JSONObject> it;
 		Iterator<List<JSONObject>> itr = newStuff.iterator();
@@ -113,7 +113,7 @@ public class NounScanner {
 			tok = it.get(0);
 			start = tok.getAsNumber("start");
 			phraseMap.put(start.toString(), util.toPhrase(pos, start.intValue(), it));
-			environment.logDebug("NounScanner.toPhrases-2\n"+phraseMap);
+			//environment.logDebug("NounScanner.toPhrases-2\n"+phraseMap);
 		}
 	}
 	
@@ -121,7 +121,7 @@ public class NounScanner {
 		List<List<JSONObject>> longest = a;
 
 		int len1 = longest.size();
-		environment.logDebug("NounScanner.mergePatterns\n"+longest);
+		//environment.logDebug("NounScanner.mergePatterns\n"+longest);
 		JSONObject tok;
 		List<JSONObject> c;
 		List<List<JSONObject>> toRemove = new ArrayList<List<JSONObject>>();
@@ -133,13 +133,13 @@ public class NounScanner {
 			if (!dropper.isEmpty())
 				toRemove.addAll(dropper);
 		}
-		environment.logDebug("NounScanner.mergePatterns-2\n"+toRemove);
+		//environment.logDebug("NounScanner.mergePatterns-2\n"+toRemove);
 		if (!toRemove.isEmpty()) {
 			len1 = toRemove.size();
 			for (int i=0; i<len1; i++)
 				longest.remove(toRemove.get(i));
 		}
-		environment.logDebug("NounScanner.mergePatterns+\n"+longest);
+		//environment.logDebug("NounScanner.mergePatterns+\n"+longest);
 		return longest;
 	}
 	
@@ -154,7 +154,7 @@ public class NounScanner {
 		int len = longest.size();
 		int lenA = target.size(), lenB;
 		JSONObject targ = target.get(0);
-		environment.logDebug("C1 \n"+targ);
+		//environment.logDebug("C1 \n"+targ);
 		JSONObject tok = target.get(lenA-1);
 		int tStart = targ.getAsNumber("start").intValue();
 		int tEnd = tok.getAsNumber("start").intValue();
@@ -165,7 +165,7 @@ public class NounScanner {
 			lenB = l.size();
 			tok = l.get(0);
 			fStart = tok.getAsNumber("start").intValue();
-			environment.logDebug("C1-1 "+tStart+" "+tEnd+" "+fStart+"\n"+target+"\n"+l);
+			//environment.logDebug("C1-1 "+tStart+" "+tEnd+" "+fStart+"\n"+target+"\n"+l);
 			if ( fStart == tStart) {
 				if (lenB < lenA)
 					result.add(l);
@@ -177,7 +177,7 @@ public class NounScanner {
 				result.add(l);
 			} 
 		}
-		environment.logDebug("C1+\n"+target+"\n"+result);
+		//environment.logDebug("C1+\n"+target+"\n"+result);
 		return result;
 	}
 	
@@ -188,7 +188,7 @@ public class NounScanner {
 	 * @return
 	 */
 	List<List<JSONObject>> nPattern_0(List<JSONObject> sentenceTokens, String sentencePatterns, String pattern) {
-		environment.logDebug("NounScanner.nPattern_0 "+pattern+"\n"+sentencePatterns);
+		//environment.logDebug("NounScanner.nPattern_0 "+pattern+"\n"+sentencePatterns);
 		String [] myPattern = pattern.split(" ");
 		String [] patterns = sentencePatterns.split(" ");
 		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
@@ -208,15 +208,15 @@ public class NounScanner {
 		while (l != null) {
 			r = gatherPattern(pointer, myPattern, patterns, sentenceTokens, blockPattern);
 			l = (List<JSONObject>)r.getResultObject();
-			environment.logDebug("NounScanner.nPattern_0-2\n"+l);
+			//environment.logDebug("NounScanner.nPattern_0-2\n"+l);
 			if (l != null) {
 				pointer = ((Integer)r.getResultObjectA()).intValue();
 				col.add(l);
 				pointer += myPattern.length;
-				environment.logDebug("NounScanner.nPattern_0-3 "+pointer);
+				//environment.logDebug("NounScanner.nPattern_0-3 "+pointer);
 			}
 		}
-		environment.logDebug("NounScanner.nPattern_0+\n"+col);
+		//environment.logDebug("NounScanner.nPattern_0+\n"+col);
 		return col;
 	}
 	/////////////////////////////////
@@ -246,7 +246,7 @@ public class NounScanner {
 						  String [] allPatterns,
 						  List<JSONObject> tokens,
 						  String blockPattern) {
-		environment.logDebug("NounScanner.gatherPattern "+offset+" "+blockPattern);
+		//environment.logDebug("NounScanner.gatherPattern "+offset+" "+blockPattern);
 		IResult r = new ResultPojo();
 		List<JSONObject> result = null;
 		int where = -1;
@@ -266,34 +266,34 @@ public class NounScanner {
 					// for each following allPattern
 					p2 = ptn[j];
 					// is this it?
-					environment.logDebug("NounScanner.gatherPattern-0 "+i+" "+j+" "+found+" "+p1+" "+p2);
+					//environment.logDebug("NounScanner.gatherPattern-0 "+i+" "+j+" "+found+" "+p1+" "+p2);
 					if (p1.startsWith(p2)) {
 						//possible hit
 						if ((i+j+1) < allLen) {
 							p1 = allPatterns[i+j+1];
 							if ((j+1)<myLen) {
 								p2 = ptn[j+1];
-								environment.logDebug("NounScanner.gatherPattern-1 "+(i+j+1)+" "+(j+1)+" "+found+" "+p1+" "+p2);
+								//environment.logDebug("NounScanner.gatherPattern-1 "+(i+j+1)+" "+(j+1)+" "+found+" "+p1+" "+p2);
 								if (!p1.startsWith(p2)) {
-									environment.logDebug("PredicateScanner.gatherPattern-a");
+									//environment.logDebug("PredicateScanner.gatherPattern-a");
 									break;
 								}							} else {
-								environment.logDebug("NounScanner.gatherPattern-did");
+								//environment.logDebug("NounScanner.gatherPattern-did");
 								did = true;
 								where = temp;
 								break;
 							}
 						} else {
-							environment.logDebug("NounScanner.gatherPattern-b?");
+							//environment.logDebug("NounScanner.gatherPattern-b?");
 							//ran out of room
 							found = false;
 							break;
 						}
 					} else {
-						environment.logDebug("NounScanner.gatherPattern-c");
+						//environment.logDebug("NounScanner.gatherPattern-c");
 						break; // endif - could b here because not hit
 					}
-					environment.logDebug("NounScanner.gatherPattern-d");
+					//environment.logDebug("NounScanner.gatherPattern-d");
 				}				
 			}
 		}
@@ -303,7 +303,7 @@ public class NounScanner {
 			isValid = true;
 			result = new ArrayList<JSONObject>();
 			int start = where, lim = start+myLen;
-			environment.logDebug("NounScanner.gatherPattern-2 "+start+" "+lim+" "+tokLen);
+			//environment.logDebug("NounScanner.gatherPattern-2 "+start+" "+lim+" "+tokLen);
 			boolean isFirst = true;
 			boolean block = false;
 			for (int i=start;i<lim; i++) {
@@ -324,7 +324,7 @@ public class NounScanner {
 				isFirst = false;
 			}
 		}
-		environment.logDebug("NounScanner.gatherPattern-3 "+isValid+"\n"+result);
+		//environment.logDebug("NounScanner.gatherPattern-3 "+isValid+"\n"+result);
 		if (isValid) {
 			r.setResultObject(result);
 			r.setResultObjectA(new Integer(where));
@@ -360,7 +360,7 @@ public class NounScanner {
 				jo = sentenceTokens.get(where+1);
 				//test for specific ADP: "of"
 				x = (jo.getAsString("pos").equals(ISpacyConstants.ADP) && jo.getAsString("text").equals("of"));
-				environment.logDebug("NounScanner.validateToken "+x+"\n"+jo+"\n"+token);
+				//environment.logDebug("NounScanner.validateToken "+x+"\n"+jo+"\n"+token);
 				if (x) {
 					// an "of" preceded by a DET -- the X of y must be blocked
 					if ((where-1) >= 0) {
@@ -379,7 +379,7 @@ public class NounScanner {
 				}*/
 			}
 		}
-		environment.logDebug("NounScanner.validateToken+ "+result+"\n"+token);
+		//environment.logDebug("NounScanner.validateToken+ "+result+"\n"+token);
 		
 		return result;
 	}
@@ -471,7 +471,7 @@ public class NounScanner {
 	void spotNounsB(List<JSONObject> tokens) {
 		int len = tokens.size();
 		JSONObject tokA, tokB, tokC;
-		environment.logDebug("SPOTNOUNB\n"+tokens);
+		//environment.logDebug("SPOTNOUNB\n"+tokens);
 		for (int i=0;i<len;i++) {
 			tokA = tokens.get(i);
 			if (tokA.getAsString("pos").equals(ISpacyConstants.DET)) {
@@ -480,7 +480,7 @@ public class NounScanner {
 					tokC = tokens.get(i+2);
 					if (tokC.getAsString("pos").equals(ISpacyConstants.VERB)) {
 						tokB = tokens.get(i+1);
-						environment.logDebug("SPOTNOUNB-1 "+tokB+"\n"+tokA+" "+tokB);
+						//environment.logDebug("SPOTNOUNB-1 "+tokB+"\n"+tokA+" "+tokB);
 						if (tokB.getAsString("dep").equals("nsubj"))
 							tokB.put("pos", ISpacyConstants.NOUN);
 					}
@@ -495,7 +495,7 @@ public class NounScanner {
 	 * @param tokens
 	 */
 	void spotNounsA(List<JSONObject> tokens) {
-		environment.logDebug("SPOTNOUNA\n"+tokens);
+		//environment.logDebug("SPOTNOUNA\n"+tokens);
 		int len = tokens.size();
 		JSONObject tokA, tokB, tokC;
 		for (int i=0;i<len;i++) {

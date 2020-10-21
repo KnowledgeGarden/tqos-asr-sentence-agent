@@ -29,7 +29,7 @@ public class SpacyUtil {
 	}
 
 	public JSONObject toPhrase(String pos, int start, List<JSONObject> nouns) {
-		environment.logDebug("TOPHRASE "+pos+" "+start+"\n"+nouns);
+		//environment.logDebug("TOPHRASE "+pos+" "+start+"\n"+nouns);
 		JSONObject result = new JSONObject();
 		result.put("start", new Integer(start));
 		result.put("pos", pos);
@@ -45,7 +45,7 @@ public class SpacyUtil {
 		}
 		result.put("width", Integer.toString(width));
 		result.put("text", buf.toString().trim());
-		environment.logDebug("TOPHRASE+ "+result);		
+		//environment.logDebug("TOPHRASE+ "+result);		
 		return result;
 	}
 

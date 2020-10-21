@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.topicquests.os.asr.dbpedia.SpotlightClient;
-import org.topicquests.os.asr.dbpedia.SpotlightUtil;
 import org.topicquests.os.asr.reader.spacy.api.ICoreReader;
 import org.topicquests.os.asr.reader.spacy.api.IParagraphObjectFields;
 import org.topicquests.support.api.IEnvironment;
@@ -24,19 +22,17 @@ import net.minidev.json.JSONObject;
  */
 public class ReaderCore implements ICoreReader {
 	private IEnvironment environment;
-	private SpotlightClient scl;
 
 	/**
 	 * @param env
 	 */
 	public ReaderCore(IEnvironment env) {
 		environment = env;
-		scl = new SpotlightClient(environment);
 	}
 
 	@Override
 	public void interpretMainModel(JSONObject paragraphObject, JSONObject spacyModel) {
-		environment.logDebug("SpacyInterpreter.interpretMainModel\n"+spacyModel);
+		//environment.logDebug("SpacyInterpreter.interpretMainModel\n"+spacyModel);
 		
 		// create a list for sentenceObjects
 		List<JSONObject> sentenceObjects = new ArrayList<JSONObject>();
@@ -76,7 +72,7 @@ public class ReaderCore implements ICoreReader {
 			masterTokens.add(jo);
 			rawTokens.add(jo);
 		}
-		environment.logDebug("PARAGRAPHTOKENS\n"+paragraphTokenMap);
+		//environment.logDebug("PARAGRAPHTOKENS\n"+paragraphTokenMap);
 		// create a list for DBpedia hits
 		List<JSONObject>dbPediaObjects = new ArrayList<JSONObject>();
 		// inject it into the paragraphObject
@@ -127,7 +123,7 @@ public class ReaderCore implements ICoreReader {
 			
 			//DBpedia
 			// Add any DBpedia hits to sentence and accumulate for paragraph
-			dbps = processDBpedia(sentenceObject.getAsString("text"));
+			dbps = null; // TODO processDBpedia(sentenceObject.getAsString("text"));
 			if (dbps != null && !dbps.isEmpty()) {
 				sentenceObject.put(IParagraphObjectFields.DBPEDIA_OBJECT_KEY, dbps);
 				allDbps.addAll(dbps);
@@ -138,19 +134,5 @@ public class ReaderCore implements ICoreReader {
 		paragraphObject.put(IParagraphObjectFields.SENTENCE_OBJECT_KEY, sentenceObjects);
 	}
 
-	/**
-	 * DBpedia
-	 * @param sentence
-	 * @return
-	 */
-	List<JSONObject> processDBpedia(String sentence) {
-		IResult r =  scl.annotateSentence(sentence);
-		JSONObject jo =(JSONObject)r.getResultObject();
-		if (jo != null) {
-			SpotlightUtil scu = new SpotlightUtil(jo);
-			return scu.listResources();
-		}
-		return null;
-	}
 
 }

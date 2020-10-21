@@ -42,6 +42,7 @@ public class ConcordanceDocument implements IDocument {
 		PMID					= "pmid",
 		PMCID					= "pcid",
 		TITLE				 	= "title",
+		URL						= "url",
 		AUTHORS					= "authors", // simple names
 		LANGUAGE				= "lang",
 		ABSTRACTS				= "abstracts",
@@ -88,6 +89,17 @@ public class ConcordanceDocument implements IDocument {
 	private ConcordanceDocument(boolean t) {
 		data = new JSONObject();
 	}
+	
+	@Override
+	public void setURL(String url) {
+		data.put(URL, url);
+	}
+
+	@Override
+	public String getURL() {
+		return data.getAsString(URL);
+	}
+
 	
 	/**
 	 * Used by {@link ConversationModel} getConversation
@@ -151,10 +163,13 @@ public class ConcordanceDocument implements IDocument {
 	}
 
 	@Override
-	public void addParagraph(String theParagraph, String language) {
+	public IParagraph addParagraph(String theParagraph, String language) {
 		IParagraph p = new ConcordanceParagraph();
 		p.setParagraph(theParagraph, language);
+		p.setDocumentId(this.getId());
+		p.setID(UUID.randomUUID().toString());
 		this.addParagraph(p);
+		return p;
 	}
 	
 	@Override

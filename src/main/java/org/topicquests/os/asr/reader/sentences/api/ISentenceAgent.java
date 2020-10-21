@@ -28,7 +28,7 @@ public interface ISentenceAgent extends IMessageConsumerListener {
 	 * @param spacy
 	 * @return
 	 */
-	void acceptSpacyJSON(JSONObject paragraphObject, JSONObject spacy);
+	//void acceptSpacyJSON(JSONObject paragraphObject, JSONObject spacy);
 	
 	/**
 	 * When all models have been completed, run this. This will
@@ -37,7 +37,14 @@ public interface ISentenceAgent extends IMessageConsumerListener {
 	 * @param paragraphObject
 	 * @return
 	 */
-	IResult finishParagraph(JSONObject paragraphObject);
+	//IResult finishParagraph(JSONObject paragraphObject);
+	
+	/**
+	 * support testing
+	 * @param paragraphObject
+	 * @return
+	 */
+	IResult processParagraph(JSONObject paragraphObject);
 	
 	void shutDown();
 }

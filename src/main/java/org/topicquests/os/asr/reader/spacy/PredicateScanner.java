@@ -56,11 +56,11 @@ public class PredicateScanner {
 	public void scan4VerbPhrases(List<JSONObject> sentenceTokens, 
 								 JSONObject paragraphObject,
 								 String sentencePattern) {
-		environment.logDebug("PredicateScanner.scan4VerbPhrases\n"+sentenceTokens);
+		//environment.logDebug("PredicateScanner.scan4VerbPhrases\n"+sentenceTokens);
 		JSONObject verbPhraseMap = (JSONObject)paragraphObject.get(IParagraphObjectFields.PREDICATE_PHRASES);
 
 		spotPatternVerbPhrases(sentenceTokens, sentencePattern, verbPhraseMap);
-		environment.logDebug("PredicateScanner.scan4VerbPhrases+\n"+verbPhraseMap);
+		//environment.logDebug("PredicateScanner.scan4VerbPhrases+\n"+verbPhraseMap);
 	}
 	
 	void spotPatternVerbPhrases(List<JSONObject> sentenceTokens, String sentencePatterns, JSONObject verbPhraseMap) {
@@ -77,13 +77,13 @@ public class PredicateScanner {
 			}
 		}
 		this.mergePatterns(master);
-		environment.logDebug("PredicateScanner.spotPattrnNounPhrases\n"+master);
+		//environment.logDebug("PredicateScanner.spotPattrnNounPhrases\n"+master);
 		toPhrases(master, verbPhraseMap, ISpacyConstants.VERB);
 
 	}
 	
 	void toPhrases(List<List<JSONObject>> newStuff, JSONObject phraseMap, String pos) {
-		environment.logDebug("PredicateScanner.toPhrases\n"+newStuff+"\n"+phraseMap);
+		//environment.logDebug("PredicateScanner.toPhrases\n"+newStuff+"\n"+phraseMap);
 		if (newStuff.isEmpty()) return;
 		List<JSONObject> it;
 		Iterator<List<JSONObject>> itr = newStuff.iterator();
@@ -96,7 +96,7 @@ public class PredicateScanner {
 			tok = it.get(0);
 			start = tok.getAsNumber("start");
 			phraseMap.put(start.toString(), util.toPhrase(pos, start.intValue(), it));
-			environment.logDebug("PredicateScanner.toPhrases-2\n"+phraseMap);
+			//environment.logDebug("PredicateScanner.toPhrases-2\n"+phraseMap);
 		}
 	}
 	
@@ -104,7 +104,7 @@ public class PredicateScanner {
 		List<List<JSONObject>> longest = a;
 
 		int len1 = longest.size();
-		environment.logDebug("PredicateScannermergePatterns\n"+longest);
+		//environment.logDebug("PredicateScannermergePatterns\n"+longest);
 		List<JSONObject> c;
 		List<List<JSONObject>> toRemove = new ArrayList<List<JSONObject>>();
 		List<JSONObject> dropper;
@@ -115,13 +115,13 @@ public class PredicateScanner {
 			if (dropper != null)
 				toRemove.add(dropper);
 		}
-		environment.logDebug("PredicateScannermergePatterns-2\n"+toRemove);
+		//environment.logDebug("PredicateScannermergePatterns-2\n"+toRemove);
 		if (!toRemove.isEmpty()) {
 			len1 = toRemove.size();
 			for (int i=0; i<len1; i++)
 				longest.remove(toRemove.get(i));
 		}
-		environment.logDebug("PredicateScannermergePatterns+\n"+longest);
+		//environment.logDebug("PredicateScannermergePatterns+\n"+longest);
 		return longest;
 	}
 	
@@ -175,7 +175,7 @@ public class PredicateScanner {
 	 * @return
 	 */
 	List<List<JSONObject>> nPattern_0(List<JSONObject> sentenceTokens, String sentencePatterns, String pattern) {
-		environment.logDebug("PredicateScanner.nPattern_0 "+pattern+"\n"+sentencePatterns);
+		//environment.logDebug("PredicateScanner.nPattern_0 "+pattern+"\n"+sentencePatterns);
 		String [] myPattern = pattern.split(" ");
 		String [] patterns = sentencePatterns.split(" ");
 		List<List<JSONObject>> col = new ArrayList<List<JSONObject>>();
@@ -194,7 +194,7 @@ public class PredicateScanner {
 		while (l != null) {
 			r = gatherPattern(pointer, myPattern, patterns, sentenceTokens, blockPattern);
 			l = (List<JSONObject>)r.getResultObject();
-			environment.logDebug("PredicateScanner.nPattern_0-1 "+l);
+			//environment.logDebug("PredicateScanner.nPattern_0-1 "+l);
 			if (l != null) {
 				pointer = ((Integer)r.getResultObjectA()).intValue();
 				col.add(l);
@@ -218,7 +218,7 @@ public class PredicateScanner {
 						  String [] allPatterns, 
 						  List<JSONObject> tokens,
 						  String blockPattern) {
-		environment.logDebug("PredicateScanner.gatherPattern "+offset+" "+blockPattern);
+		//environment.logDebug("PredicateScanner.gatherPattern "+offset+" "+blockPattern);
 		IResult r = new ResultPojo();
 		List<JSONObject> result = null;
 		int where = -1;
@@ -238,32 +238,32 @@ public class PredicateScanner {
 					// for each following allPattern
 					p2 = ptn[j];
 					// is this it?
-					environment.logDebug("PredicateScanner.gatherPattern-0 "+i+" "+j+" "+found+" "+p1+" "+p2);
+					//environment.logDebug("PredicateScanner.gatherPattern-0 "+i+" "+j+" "+found+" "+p1+" "+p2);
 					if (p1.startsWith(p2)) {
 						//possible hit
 						if ((i+j+1) < allLen) {
 							p1 = allPatterns[i+j+1];
 							if ((j+1)<myLen) {
 								p2 = ptn[j+1];
-								environment.logDebug("PredicateScanner.gatherPattern-1 "+(i+j+1)+" "+(j+1)+" "+found+" "+p1+" "+p2);
+								//environment.logDebug("PredicateScanner.gatherPattern-1 "+(i+j+1)+" "+(j+1)+" "+found+" "+p1+" "+p2);
 								if (!p1.startsWith(p2)) {
-									environment.logDebug("PredicateScanner.gatherPattern-a");
+									//environment.logDebug("PredicateScanner.gatherPattern-a");
 									break;
 								}
 							} else {
-								environment.logDebug("PredicateScanner.gatherPattern-did");
+								//environment.logDebug("PredicateScanner.gatherPattern-did");
 								did = true;
 								where = temp;
 								break;
 							}
 						} else {
-							environment.logDebug("PredicateScanner.gatherPattern-b?");
+							//environment.logDebug("PredicateScanner.gatherPattern-b?");
 							//ran out of room ??????
 							found = false;
 							break;
 						}
 					} else {
-						environment.logDebug("PredicateScanner.gatherPattern-c");
+						//environment.logDebug("PredicateScanner.gatherPattern-c");
 						break; // endif - could b here because not hit
 					}
 				}
@@ -275,7 +275,7 @@ public class PredicateScanner {
 			isValid = true;
 			result = new ArrayList<JSONObject>();
 			int start = where, lim = start+myLen;
-			environment.logDebug("PredicateScanner.gatherPattern-2 "+start+" "+lim+" "+tokLen);
+			//environment.logDebug("PredicateScanner.gatherPattern-2 "+start+" "+lim+" "+tokLen);
 			boolean isFirst = true;
 			boolean block = false;
 			for (int i=start;i<lim; i++) {
@@ -296,7 +296,7 @@ public class PredicateScanner {
 				isFirst = false;
 			}
 		}
-		environment.logDebug("NounScanner.gatherPattern-3 "+isValid+"\n"+result);
+		//environment.logDebug("NounScanner.gatherPattern-3 "+isValid+"\n"+result);
 		if (isValid) {
 			r.setResultObject(result);
 			r.setResultObjectA(new Integer(where));
@@ -335,7 +335,7 @@ public class PredicateScanner {
 			}
 		}*/
 
-		environment.logDebug("PredicateScanner.validateToken+ "+result+"\n"+token);
+		//environment.logDebug("PredicateScanner.validateToken+ "+result+"\n"+token);
 		
 		return result;
 	}

@@ -26,6 +26,7 @@ public interface IParagraphObjectFields {
 		SENTENCE_TOKEN_START	= "tokenStart",
 		SENTENCE_TOKEN_END		= "tokenEnd",
 		SENTENCE_TEXT			= "text",
+		SENTENCE_TRIPLES		= "triples",
 		//these are paragraph level
 		PARAGRAPH_TOKEN_MAP_KEY	=	"paragraphTokens",
 		PARAGRAPH_ID			= "paragraphId",

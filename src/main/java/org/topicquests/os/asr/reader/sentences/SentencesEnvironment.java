@@ -11,6 +11,7 @@ import org.topicquests.asr.general.GeneralDatabaseEnvironment;
 import org.topicquests.asr.general.document.api.IDocumentClient;
 import org.topicquests.asr.paragraph.api.IParagraphClient;
 import org.topicquests.asr.sentence.api.ISentenceClient;
+import org.topicquests.hyperbrane.WordGramCache;
 import org.topicquests.os.asr.DocumentProvider;
 import org.topicquests.os.asr.ParagraphProvider;
 import org.topicquests.os.asr.SentenceProvider;
@@ -18,10 +19,14 @@ import org.topicquests.os.asr.api.IDocumentProvider;
 import org.topicquests.os.asr.api.IParagraphProvider;
 import org.topicquests.os.asr.api.ISentenceProvider;
 import org.topicquests.os.asr.api.IStatisticsClient;
-import org.topicquests.os.asr.paragraph.ParagraphDocHttpClient;
 import org.topicquests.os.asr.reader.sentences.api.ISentenceAgent;
+import org.topicquests.os.asr.wordgram.WordGramEnvironment;
+import org.topicquests.os.asr.wordgram.api.IWordGramAgentModel;
 import org.topicquests.support.RootEnvironment;
 import org.topicquests.support.config.Configurator;
+import org.topicquests.os.asr.gramolizer.SGModel;
+import org.topicquests.os.asr.gramolizer.api.ISGModel;
+
 /**
  * @author jackpark
  *
@@ -38,7 +43,10 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 	private GeneralDatabaseEnvironment generalEnvironment;
 	private Map<String,Object>kafkaProps;
 	private ISentenceAgent sentenceAgent;
-	private ParagraphDocHttpClient paraDocClient;
+	private WordGramEnvironment wordGramEnvironment;
+	private WordGramCache wgCache;
+	private final int cacheSize = 8192;
+	private ISGModel gramolizer;
 
 	/**
 	 * This environment is made to be extended
@@ -56,8 +64,11 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 		sentenceProvider = new SentenceProvider(this);
 		paragraphProvider = new ParagraphProvider(this);
 		kafkaProps = Configurator.getProperties("kafka-topics.xml");
-		paraDocClient = new ParagraphDocHttpClient(this);
+		wordGramEnvironment = new WordGramEnvironment("wordgram-props.xml", "logger.properties");
+		wgCache = new WordGramCache(this, cacheSize);
+		gramolizer = new SGModel(this);
 		instance = this;
+		
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			
 			@Override
@@ -66,15 +77,18 @@ public abstract class SentencesEnvironment extends RootEnvironment {
 			}
 		});
 	}
-	
+
+	public ISGModel getGramolizer() {
+		return gramolizer;
+	}
+	public IWordGramAgentModel getWordgramAgentModel() {
+		return wordGramEnvironment.getModel();
+	}
+
 	public static SentencesEnvironment getInstance() {
 		return instance;
 	}
-	
-	public ParagraphDocHttpClient getParaDocClient() {
-		return paraDocClient;
-	}
-	
+		
 	public Map<String, Object> getKafkaTopicProperties() {
 		return kafkaProps;
 	}
